@@ -14,11 +14,18 @@
         android:theme="@style/Theme.EConstat_Android"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivity">
+        </activity>
+        <activity
+        android:name=".ViewModel.LoginActivity"
+            >
+        </activity>
+        <activity
+            android:name=".ViewModel.SplashScreenActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
