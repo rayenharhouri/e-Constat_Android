@@ -1,18 +1,23 @@
 <resources>
     <string name="app_name">eConstat_Android</string>
-    <string name="email">email</string>
+    <string name="email">Exp: email@example.com</string>
     <string name="lastName">Last Name</string>
     <string name="address">address</string>
     <string name="firstName">First Name</string>
     <string name="password">password</string>
+    <string name="confirmPassword">Confirm password</string>
     <string name="rememberMe">Remember me</string>
     <string name="newAroundHere">New around here?</string>
     <string name="signup">Sign Up</string>
-    <string name="forgotpwd">Forget password ?</string>
+    <string name="forgotpwd">Forget password</string>
     <string name="must_not_be_empty">Must not be empty !</string>
     <string name="check_email">Check your email!</string>
     <string name="driverLicense">driver license</string>
-
-
+    <string name="signuptxt">Welcome to our sign up page! Please fill out the form below to create your account 📝.</string>
+    <string name="forgetPwd_message">To restore your account, please enter the email address associated with your account below.</string>
+    <string name="next">Next</string>
+    <string name="otp">OTP VERIFICATION</string>
+    <string name="confirm">Confirm</string>
+    <string name="changePwd">Change Password</string>
 
 </resources>

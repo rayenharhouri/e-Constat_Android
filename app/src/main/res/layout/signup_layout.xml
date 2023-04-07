@@ -10,7 +10,19 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/signuptxt"
+            android:textSize="18dp"
+            android:textAlignment="center"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/black"
 
+            >
+        </TextView>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lyt_firstName"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -18,8 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
-
-            android:layout_marginTop="190dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             app:boxStrokeErrorColor="@color/txtFieldError"
             app:errorIconTint="@color/txtFieldError"
@@ -105,15 +116,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:startIconDrawable="@drawable/passwordicon"
-            app:startIconTint="@color/grey">
+            app:endIconMode="password_toggle"
+            >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
+                android:inputType="textPassword"
                 android:hint="@string/password"
-                android:inputType="textEmailAddress"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
@@ -168,19 +180,16 @@
                 android:inputType="textEmailAddress"
                 android:textSize="16sp" />
         </com.google.android.material.textfield.TextInputLayout>
-
-
-
         <Button
             android:id="@+id/btnSignUp"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="30dp"
             android:text="Sign Up"
             android:textSize="20dp"
             android:background="@drawable/rounded_button"
             android:layout_gravity="center"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lyt_email" />
+            />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </ScrollView>
