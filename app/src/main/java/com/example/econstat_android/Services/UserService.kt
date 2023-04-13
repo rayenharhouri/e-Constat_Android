@@ -39,6 +39,12 @@ interface UserService {
         val newPassword: String,
         val newPasswordConfirm: String
     )
+    data class updateProfileBody(
+        val driverLicense: String,
+        val name: String,
+        val lastName: String,
+        val token: String
+        )
 
     @POST("/user/signUp")
     fun signUp(@Body userBody: UserBody): Call<UserResponse>
@@ -58,4 +64,6 @@ interface UserService {
     @PUT("/user/updatePassword")
     fun changePwd(@Body changePwdBody: changePwdBody): Call<UserResponse>
 
+    @PUT("/user/updateUser")
+    fun updateProfile(@Body updateProfileBody: updateProfileBody) : Call<UserResponse>
 }

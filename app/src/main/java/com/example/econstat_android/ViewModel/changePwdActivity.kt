@@ -1,11 +1,16 @@
 package com.example.econstat_android.ViewModel
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.util.Log
+import android.view.WindowInsets
+import android.view.WindowInsetsController
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
@@ -35,6 +40,7 @@ class changePwdActivity : AppCompatActivity(){
         //VAR
         val context = this@changePwdActivity
         supportActionBar?.hide()
+        setFullScreen(context)
         val email = intent.getStringExtra("email")
         //INIT components
         changePwd_et = findViewById(R.id.et_cPwd)
@@ -92,4 +98,15 @@ class changePwdActivity : AppCompatActivity(){
         val dialog = builder.create()
         dialog.show()
     }
+    fun setFullScreen(activity: Activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            activity.window.insetsController?.apply {
+                hide(WindowInsets.Type.statusBars())
+                systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
+        } else {
+            activity.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        }
+    }
+
 }

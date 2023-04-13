@@ -7,10 +7,11 @@ data class User(
         val _id: String,
         val email: String,
         val password: String,
-        val firstname: String,
-        val lastname: String,
+        val name: String,
+        val lastName: String,
         val address: Date,
         val driverLicense: String,
         val delevredOn: String,
         val number: String,
+        val token: String
     ) : Serializable

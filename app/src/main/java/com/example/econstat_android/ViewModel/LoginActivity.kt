@@ -1,11 +1,16 @@
 package com.example.econstat_android.ViewModel
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.util.Patterns
 import android.view.View
+import android.view.WindowInsets
+import android.view.WindowInsetsController
+import android.view.WindowManager
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -48,12 +53,8 @@ class LoginActivity : AppCompatActivity(){
         signUpBtn = findViewById(R.id.signup)
         forgetPwd = findViewById(R.id.forgotPwd)
         supportActionBar?.hide()
-        signInBtn.setOnClickListener{
-            if(validateInput()){
-                var  intent= Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            }
-        }
+        setFullScreen(context)
+
         signUpBtn.setOnClickListener{
             var intent= Intent(this,SignUpActivity::class.java)
             startActivity(intent)
@@ -88,8 +89,11 @@ class LoginActivity : AppCompatActivity(){
                         startActivity(intent)
                         finish()
                     }
+                    else if(response.code() == 403) {
+                        showDialog(context,"Please Verify your account on ${emailEt.text.toString()}")
+                    }
                     else if(response.code() == 400) {
-                        showDialog(context)
+                        showDialog(context,"Wrong password ❌")
                     }
                     else {
                         println("status code is " + response.code())
@@ -133,12 +137,22 @@ class LoginActivity : AppCompatActivity(){
             return false
         }
     }
-    public fun showDialog(activityName:Context){
+     fun showDialog(activityName:Context,message:String){
         val builder = AlertDialog.Builder(activityName)
         builder.setTitle("Caution ⚠️")
-        builder.setMessage("Wrong password ❌")
+        builder.setMessage(message)
         builder.setPositiveButton("OK", null)
         val dialog = builder.create()
         dialog.show()
+    }
+    fun setFullScreen(activity: Activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            activity.window.insetsController?.apply {
+                hide(WindowInsets.Type.statusBars())
+                systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
+        } else {
+            activity.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        }
     }
 }

@@ -19,5 +19,18 @@
     <string name="otp">OTP VERIFICATION</string>
     <string name="confirm">Confirm</string>
     <string name="changePwd">Change Password</string>
+    <string name="updatePwd">Update Password</string>
+    <string name="oldPwd">Old Password</string>
+    <string name="newPwd">New Password</string>
+    <string name="newPwdC">New Password Confirm</string>
+    <string name="UnlockFields">Click the icon to edit</string>
+    <string name="home">Home</string>
+    <string name="car">My Cars</string>
+    <string name="profile">My Profile</string>
+    <string name="report">New accident report</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

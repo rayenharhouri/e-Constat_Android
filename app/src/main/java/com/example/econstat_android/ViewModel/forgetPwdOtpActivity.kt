@@ -1,11 +1,16 @@
 package com.example.econstat_android.ViewModel
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.os.Build
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.WindowInsets
+import android.view.WindowInsetsController
+import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.Toast
@@ -30,7 +35,7 @@ class forgetPwdOtpActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         //hide Toolbar
         supportActionBar?.hide()
-
+        setFullScreen(this@forgetPwdOtpActivity)
         setContentView(R.layout.forgetpwd_otp_layout)
         // init components
         pinView = findViewById(R.id.pinView)
@@ -92,5 +97,15 @@ class forgetPwdOtpActivity : AppCompatActivity() {
             )
         }
 
+    }
+    fun setFullScreen(activity: Activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            activity.window.insetsController?.apply {
+                hide(WindowInsets.Type.statusBars())
+                systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
+        } else {
+            activity.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        }
     }
 }
