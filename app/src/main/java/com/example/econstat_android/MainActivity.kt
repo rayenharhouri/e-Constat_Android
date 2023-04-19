@@ -7,17 +7,25 @@ import android.os.Bundle
 import android.view.WindowInsets
 import android.view.WindowInsetsController
 import android.view.WindowManager
+import com.example.econstat_android.Services.ApiService
+import com.example.econstat_android.Services.InsuranceService
 import com.example.econstat_android.ViewModel.profileActivity
+import com.example.econstat_android.fragments.SettingsFragment
 import com.example.econstat_android.fragments.homeFragment
+import com.example.econstat_android.fragments.insuranceFromFragment
+import com.example.econstat_android.utils.SessionManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var sessionManager: SessionManager
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setFullScreen(this@MainActivity)
         setContentView(R.layout.activity_main)
+        sessionManager = SessionManager(this)
+        sessionManager.isLoggedIn = true
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
         bottomNavigationView.setOnNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -29,10 +37,21 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_car -> {
+                    val fragment = insuranceFromFragment.newInstance("643ddcad80b80bd0af1ce13f")
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView,fragment)
+                        .commit()
                     true
                 }
                 R.id.navigation_profile -> {
                     val fragment = profileActivity()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView, fragment)
+                        .commit()
+                    true
+                }
+                R.id.navigation_settings -> {
+                    val fragment = SettingsFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainerView, fragment)
                         .commit()
@@ -54,4 +73,5 @@ class MainActivity : AppCompatActivity() {
             activity.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         }
     }
+
 }

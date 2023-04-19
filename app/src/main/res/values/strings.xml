@@ -28,9 +28,32 @@
     <string name="car">My Cars</string>
     <string name="profile">My Profile</string>
     <string name="report">New accident report</string>
-
+    <string name="insuranceForm">Please fill the missing information ⚠️</string>
+    <string name="insuranceName">Insurance name</string>
+    <string name="ContractNum">Contract Number</string>
+    <string name="agency">Agency</string>
+    <string name="validityTo">Validity To</string>
+    <string name="validityFrom">Validity From</string>
+    <string name="logOut">Logout</string>
+    <string name="languages">Languages</string>
+    <string name="general">General Settings</string>
+    <string name="TermsAndCondition">Terms And Conditions</string>
+    <string name="TC_1">Welcome to eConstat TN, an app that helps you easily and quickly fill in reports. In order to use the app, you will need to create an account. By creating an account and using the app, you agree to be bound by these terms and conditions.</string>
+    <string name="TC_2"><b>Data Collection</b>eConstat TN collects personal information from you in order to provide you with the best possible experience. This includes information such as your name, email address, address, information about your car, and information about your car s insurance in order to make the process easier, as well as any other information you choose to provide.eConstat TN does not display any advertising to you. </string>
+    <string name="TC_3"><b>Device AccesseConstat</b>\n TN requires access to your device s camera in order to function properly. By using the app, you grant eConstat TN permission to access your device s camera.</string>
+    <string name="TC_4"><b>Third-Party Integrations</b>\neConstat TN uses a Node.js server to store and process data. By using the app, you agree to the collection, use, and sharing of your data as described in these terms and conditions.</string>
+    <string name="TC_5"><b>Changes to These Terms</b>\neConstat TN reserves the right to update these terms and conditions at any time. If we make any changes, we will post the revised terms and conditions on this page and will indicate the effective date of the revised terms and conditions. We encourage you to review these terms and conditions periodically to stay informed about our practices.</string>
+    <string name="TC_6"><b>Contact Us</b>If you have any questions about these terms and conditions, please contact us at rayen.harhouri@esprit.tn</string>
+    <string name="updatedDate">Update 4/19/2023</string>
+    <string name="version">Version</string>
+    <string name="versionNum">1.0.1</string>
+    <string name="darkMode">Dark Mode</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings">Settings</string>
+    <string name="Arabic">العربية</string>
+    <string name="French">Français</string>
+    <string name="Eng">English</string>
 
 </resources>

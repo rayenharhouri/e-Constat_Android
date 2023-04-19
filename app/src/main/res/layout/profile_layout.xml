@@ -34,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textSize="20sp"
-                android:textColor="@color/black"
+                android:textColor="@color/button"
                 android:text="@string/UnlockFields"
                 >
             </TextView>

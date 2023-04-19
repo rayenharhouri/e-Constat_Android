@@ -21,6 +21,7 @@ import com.example.econstat_android.R
 import com.example.econstat_android.Services.ApiService
 import com.example.econstat_android.Services.UserService
 import com.example.econstat_android.utils.Constant
+import com.example.econstat_android.utils.SessionManager
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.gson.Gson
@@ -37,11 +38,13 @@ class LoginActivity : AppCompatActivity(){
     private lateinit var signInBtn : Button
     private lateinit var signUpBtn : LinearLayoutCompat
     private lateinit var forgetPwd : LinearLayoutCompat
+    private lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_layout)
         //Var
+        sessionManager = SessionManager(this)
         val context = this@LoginActivity
         //INIT UI ELEMENTS
         emailEt =findViewById(R.id.et_email)
@@ -54,7 +57,9 @@ class LoginActivity : AppCompatActivity(){
         forgetPwd = findViewById(R.id.forgotPwd)
         supportActionBar?.hide()
         setFullScreen(context)
-
+        if (sessionManager.isLoggedIn) {
+            keepSession()
+        }
         signUpBtn.setOnClickListener{
             var intent= Intent(this,SignUpActivity::class.java)
             startActivity(intent)
@@ -64,48 +69,7 @@ class LoginActivity : AppCompatActivity(){
             startActivity(intent)
         }
         signInBtn.setOnClickListener{
-            ApiService.userService.signIn(
-                UserService.LoginBody(
-                    emailEt.text.toString(),
-                    passwordEt.text.toString()
-                )
-            ).enqueue( object : Callback<UserService.UserResponse> {
-                override fun onResponse(
-                    call: Call<UserService.UserResponse>,
-                    response: Response<UserService.UserResponse>
-                ) {
-                    if (response.code() == 200) {
-                        if(rememberMe.isChecked) {
-                            val sharedPreferences =
-                                getSharedPreferences(Constant.SHARED_PREF_SESSION, MODE_PRIVATE)
-                            val sharedPreferencesEditor: SharedPreferences.Editor =
-                                sharedPreferences.edit()
-                            val json = Gson().toJson(response.body()!!.user)
-                            sharedPreferencesEditor.putString("USER_DATA", json)
-                            sharedPreferencesEditor.apply()
-                        }
-                        val intent =
-                            Intent(this@LoginActivity, MainActivity::class.java)
-                        startActivity(intent)
-                        finish()
-                    }
-                    else if(response.code() == 403) {
-                        showDialog(context,"Please Verify your account on ${emailEt.text.toString()}")
-                    }
-                    else if(response.code() == 400) {
-                        showDialog(context,"Wrong password ❌")
-                    }
-                    else {
-                        println("status code is " + response.code())
-                    }
-                }
-
-                override fun onFailure(call: Call<UserService.UserResponse>, t: Throwable) {
-
-                    println("HTTP ERROR")
-                    t.printStackTrace()}
-
-            })
+            signIn(this@LoginActivity)
         }
     }
 
@@ -154,5 +118,55 @@ class LoginActivity : AppCompatActivity(){
         } else {
             activity.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
         }
+    }
+    fun signIn(context: Context){
+        ApiService.userService.signIn(
+            UserService.LoginBody(
+                emailEt.text.toString(),
+                passwordEt.text.toString()
+            )
+        ).enqueue( object : Callback<UserService.UserResponse> {
+            override fun onResponse(
+                call: Call<UserService.UserResponse>,
+                response: Response<UserService.UserResponse>
+            ) {
+                if (response.code() == 200) {
+                    if(rememberMe.isChecked) {
+                        val sharedPreferences =
+                            getSharedPreferences(Constant.SHARED_PREF_SESSION, MODE_PRIVATE)
+                        val sharedPreferencesEditor: SharedPreferences.Editor =
+                            sharedPreferences.edit()
+                        val json = Gson().toJson(response.body()!!.user)
+                        sharedPreferencesEditor.putString("USER_DATA", json)
+                        sharedPreferencesEditor.apply()
+                    }
+                    val intent =
+                        Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                else if(response.code() == 403) {
+                    showDialog(context,"Please Verify your account on ${emailEt.text.toString()}")
+                }
+                else if(response.code() == 400) {
+                    showDialog(context,"Wrong password ❌")
+                }
+                else {
+                    println("status code is " + response.code())
+                }
+            }
+
+            override fun onFailure(call: Call<UserService.UserResponse>, t: Throwable) {
+
+                println("HTTP ERROR")
+                t.printStackTrace()}
+
+        })
+    }
+    fun keepSession(){
+        val intent =
+            Intent(this@LoginActivity, MainActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
