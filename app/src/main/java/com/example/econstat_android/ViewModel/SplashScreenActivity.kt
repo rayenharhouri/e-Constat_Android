@@ -19,7 +19,7 @@ class SplashScreenActivity : AppCompatActivity() {
         setContentView(R.layout.splashscreen_layout)
         val myView = findViewById<View>(R.id.backgroundView)
         val sdk:Int = android.os.Build.VERSION.SDK_INT;
-        val drawable = R.drawable.background
+        val drawable = R.drawable.group_33623
         if (sdk < android.os.Build.VERSION_CODES.JELLY_BEAN) {
             myView.setBackgroundDrawable(ContextCompat.getDrawable(this, drawable))
         } else {

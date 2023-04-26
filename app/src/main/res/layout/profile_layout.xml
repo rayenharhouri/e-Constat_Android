@@ -15,12 +15,13 @@
         tools:context=".ViewModel.profileActivity"
         android:orientation="vertical">
     <ImageView
-        android:layout_width="280dp"
-        android:layout_height="260dp"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:scaleType="centerInside"
+        android:layout_marginTop="25dp"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/yellowcar"
-        tools:srcCompat="@drawable/yellowcar">
+        app:srcCompat="@drawable/defpdp"
+        tools:srcCompat="@drawable/defpdp">
     </ImageView>
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/edit"

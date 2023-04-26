@@ -25,7 +25,7 @@
         tools:srcCompat="@drawable/car_crash_bro" />
 
     <Button
-        android:id="@+id/btnChangePwd"
+        android:id="@+id/newReport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"

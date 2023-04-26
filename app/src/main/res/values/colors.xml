@@ -11,6 +11,9 @@
     <color name="txtField">#636363</color>
     <color name="txtFieldError">#d23220</color>
     <color name="grey">#636363</color>
+    <color name="blueLight">#F4E2DE</color>
+    <color name="blueDark">#D94F04</color>
+    <color name="txt">#F29325</color>
     <color name="lightGrey">#FFFFFF</color>
     <color name="green">#2BA24C</color>
     <color name="lightGreen">#00E5A6</color>

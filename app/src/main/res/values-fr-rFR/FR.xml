@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">eConstat_Android</string>
+    <string name="email">Exemple : email@example.com</string>
+    <string name="lastName">Nom</string>
+    <string name="address">Adresse</string>
+    <string name="firstName">Prénom</string>
+    <string name="password">Mot de passe</string>
+    <string name="confirmPassword">Confirmer le mot de passe</string>
+    <string name="rememberMe">Se souvenir de moi</string>
+    <string name="newAroundHere">Nouveau par ici ?</string>
+    <string name="signup">S inscrire</string>
+    <string name="forgotpwd">Mot de passe oublié</string>
+    <string name="must_not_be_empty">Ne doit pas être vide !</string>
+    <string name="check_email">Vérifiez votre email !</string>
+    <string name="driverLicense">Permis de conduire</string>
+    <string name="signuptxt">Bienvenue sur notre page d inscription ! Veuillez remplir le formulaire ci-dessous pour créer votre compte 📝.</string>
+    <string name="forgetPwd_message">Pour restaurer votre compte, veuillez saisir l adresse email associée à votre compte ci-dessous.</string>
+    <string name="next">Suivant</string>
+    <string name="otp">VÉRIFICATION PAR OTP</string>
+    <string name="confirm">Confirmer</string>
+    <string name="changePwd">Changer le mot de passe</string>
+    <string name="updatePwd">Mettre à jour le mot de passe</string>
+    <string name="oldPwd">Ancien mot de passe</string>
+    <string name="newPwd">Nouveau mot de passe</string>
+    <string name="newPwdC">Confirmer le nouveau mot de passe</string>
+    <string name="UnlockFields">Cliquez sur l icône pour éditer</string>
+    <string name="home">Accueil</string>
+    <string name="car">Mes Voitures</string>
+    <string name="profile">Mon profil</string>
+    <string name="report">Nouveau rapport d accident</string>
+    <string name="insuranceForm">Veuillez remplir les informations manquantes ⚠️</string>
+    <string name="insuranceName">Nom de l assurance</string>
+    <string name="ContractNum">Numéro du contrat</string>
+    <string name="agency">Agence</string>
+    <string name="validityTo">Validité jusqu au</string>
+    <string name="validityFrom">Validité à partir du</string>
+    <string name="logOut">Déconnexion</string>
+    <string name="languages">Langues</string>
+    <string name="general">Paramètres généraux</string>
+    <string name="TermsAndCondition">Conditions Générales</string>
+    <string name="TC_1">Bienvenue sur eConstat TN, une application qui vous aide à remplir facilement et rapidement des rapports. Pour utiliser l application, vous devrez créer un compte. En créant un compte et en utilisant l application, vous acceptez d être lié par ces termes et conditions.</string>
+    <string name="TC_2"><b>Collecte de données</b>eConstat TN collecte des informations personnelles auprès de vous afin de vous fournir la meilleure expérience possible. Cela inclut des informations telles que votre nom, votre adresse email, votre adresse, des informations sur votre voiture et des informations sur l assurance de votre voiture afin de faciliter le processus, ainsi que toute autre information que vous choisissez de fournir. eConstat TN ne vous affiche aucune publicité.</string>
+    <string name="TC_3"><b>Accès à l appareil</b>\n eConstat TN a besoin d accéder à la caméra de votre appareil pour fonctionner correctement. En utilisant l application, vous accordez à eConstat TN l autorisation d accéder à la caméra de votre appareil.</string>
+    <string name="TC_4"><b>Intégrations avec des tiers</b>\neConstat TN utilise un serveur Node.js pour stocker et traiter les données. En utilisant l application, vous acceptez la collecte, l utilisation et le partage de vos données tel que décrit dans ces termes et conditions.</string>
+    <string name="TC_5"><b>Modification de ces termes</b>\neConstat TN se réserve le droit de mettre à jour ces termes et conditions à tout moment. Si nous apportons des modifications, nous publierons les termes et conditions révisés sur cette page et indiquerons la date d entrée en vigueur des termes et conditions révisés. Nous vous encourageons à examiner périodiquement ces termes et conditions pour rester informé de nos pratiques.</string>
+    <string name="TC_6"><b>Contactez-nous</b>Si vous avez des questions concernant ces termes et conditions, veuillez nous contacter à l adresse rayen.harhouri@esprit.tn</string>
+    <string name="updatedDate">Mise à jour du 19/04/2023</string>
+    <string name="version">Version</string>
+    <string name="versionNum">1.0.1</string>
+    <string name="darkMode">Mode sombre</string>
+    <string name="Step1Detail">In this step, you can report the location of any damage to your car. To do so, simply click on the corresponding icon to change its status. Please refer to the icon descriptions below for more details.</string>
+    <string name="Step1">ETAPE 1</string>
+    <string name="damageDesc">This icon represents the location of any damage to your car. If the icon is displayed, it indicates that your car has been damaged in that particular location. For example, if the icon is located at the top left of the screen, it means that your car has been damaged in the top left area.</string>
+    <string name="shieldDesc">This icon represents the location of any protected or armored parts of your car. If the shield icon is displayed, it indicates that your car does not have any damage in that particular location. For example, if the shield icon is located at the top left of the screen, it means that the top left area of your car is protected or armored and does not have any damage.</string>
+    <string name="signIn">Sign Ip</string>
+    <string name="Step2">STEP TWO</string>
+    <string name="Step2Detail">In this step, you can report the location of any damage to your carB. To do so, simply click on the corresponding icon to change its status. Please refer to the icon descriptions below for more details.</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Bonjour fragment vide</string>
+    <string name="settings">Paramètres</string>
+    <string name="Arabic">العربية</string>
+    <string name="French">Français</string>
+    <string name="Eng">Anglais</string>
+
+</resources>

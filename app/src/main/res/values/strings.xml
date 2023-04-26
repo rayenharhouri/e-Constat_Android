@@ -9,6 +9,7 @@
     <string name="rememberMe">Remember me</string>
     <string name="newAroundHere">New around here?</string>
     <string name="signup">Sign Up</string>
+    <string name="signIn">Sign In</string>
     <string name="forgotpwd">Forget password</string>
     <string name="must_not_be_empty">Must not be empty !</string>
     <string name="check_email">Check your email!</string>
@@ -48,6 +49,13 @@
     <string name="version">Version</string>
     <string name="versionNum">1.0.1</string>
     <string name="darkMode">Dark Mode</string>
+    <string name="damageDesc">This icon represents the location of any damage to your car . If the icon is displayed , it indicates that your car has been damaged in that particular location . For example , if the icon is located at the top left of the screen , it means that your car has been damaged in the top left area.</string>
+    <string name="shieldDesc">This icon represents the location of any protected parts of your car.If the shield icon is displayed, it indicates that your car does not have any damage in that particular location.For example,if the shield icon is located at the top left,means that that area of your car does not have any damage.</string>
+    <string name="Step1Detail">In this step, you can report the location of any damage to your carA. To do so, simply click on the corresponding icon to change its status. Please refer to the icon descriptions below for more details.</string>
+    <string name="Step1">STEP ONE</string>
+    <string name="Step2">STEP TWO</string>
+    <string name="Step2Detail">In this step, you can report the location of any damage to your carB. To do so, simply click on the corresponding icon to change its status. Please refer to the icon descriptions below for more details.</string>
+
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_car -> {
-                    val fragment = insuranceFromFragment.newInstance("643ddcad80b80bd0af1ce13f")
+                    val fragment = insuranceFromFragment.newInstance("643dbe9c5d831b98f40d95ec")
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainerView,fragment)
                         .commit()

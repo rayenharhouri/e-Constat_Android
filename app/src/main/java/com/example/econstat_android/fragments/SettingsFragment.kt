@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.graphics.drawable.InsetDrawable
 import android.os.Build
 import android.os.Bundle
@@ -22,6 +23,7 @@ import com.example.econstat_android.R
 import com.example.econstat_android.ViewModel.LoginActivity
 import com.example.econstat_android.utils.SessionManager
 import com.google.android.material.switchmaterial.SwitchMaterial
+import java.util.*
 
 
 class SettingsFragment : Fragment() {
@@ -115,6 +117,42 @@ class SettingsFragment : Fragment() {
         }
         val gravity = Gravity.END
         popup.gravity = GravityCompat.getAbsoluteGravity(gravity, resources.configuration.layoutDirection)
+        popup.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.option_1 -> {
+                    val locale = Locale("ar") // Create a Locale object for arabic
+                    Locale.setDefault(locale) // Set the default locale to arabic
+                    val configuration = Configuration(resources.configuration)
+                    configuration.setLocale(locale)
+                    requireContext().createConfigurationContext(configuration)
+                    resources.updateConfiguration(configuration, resources.displayMetrics)
+                    requireActivity().recreate()
+                    true
+                }
+                R.id.option_2 -> {
+                    // Change the language to French here
+                    val locale = Locale("fr") // Create a Locale object for French
+                    Locale.setDefault(locale) // Set the default locale to French
+                    val configuration = Configuration(resources.configuration)
+                    configuration.setLocale(locale)
+                    requireContext().createConfigurationContext(configuration)
+                    resources.updateConfiguration(configuration, resources.displayMetrics)
+                    requireActivity().recreate()
+                    true
+                }
+                R.id.option_3 -> {
+                    val locale = Locale("en")
+                    Locale.setDefault(locale)
+                    val configuration = Configuration(resources.configuration)
+                    configuration.setLocale(locale)
+                    requireContext().createConfigurationContext(configuration)
+                    resources.updateConfiguration(configuration, resources.displayMetrics)
+                    requireActivity().recreate()
+                    true
+                }
+                else -> false
+            }
+        }
         popup.setOnDismissListener {
             // Respond to popup being dismissed.
         }
