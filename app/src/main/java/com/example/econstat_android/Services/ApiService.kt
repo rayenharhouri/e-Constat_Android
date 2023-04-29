@@ -17,4 +17,7 @@ object ApiService {
     val insuranceService: InsuranceService by lazy {
         retrofit().create(InsuranceService::class.java)
     }
+    val carService: CarService by lazy {
+        retrofit().create(CarService::class.java)
+    }
 }

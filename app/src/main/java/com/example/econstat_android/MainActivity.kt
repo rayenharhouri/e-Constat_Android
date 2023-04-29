@@ -9,6 +9,7 @@ import android.view.WindowInsetsController
 import android.view.WindowManager
 import com.example.econstat_android.Services.ApiService
 import com.example.econstat_android.Services.InsuranceService
+import com.example.econstat_android.ViewModel.HomeCarFragment
 import com.example.econstat_android.ViewModel.profileActivity
 import com.example.econstat_android.fragments.SettingsFragment
 import com.example.econstat_android.fragments.homeFragment
@@ -37,7 +38,11 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.navigation_car -> {
-                    val fragment = insuranceFromFragment.newInstance("643dbe9c5d831b98f40d95ec")
+                    /*val fragment = insuranceFromFragment.newInstance("643dbe9c5d831b98f40d95ec")
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView,fragment)
+                        .commit()*/
+                    val fragment = HomeCarFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainerView,fragment)
                         .commit()

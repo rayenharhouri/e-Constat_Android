@@ -2,7 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.insuranceFromFragment">
 
@@ -21,34 +21,24 @@
             android:layout_marginEnd="20dp"
             android:layout_marginTop="30dp"
             android:textColor="@color/txtFieldError"
-
             >
         </TextView>
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/lyt_insuranceName"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <Button
+            android:id="@+id/menu_button_insurance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:text="@string/insuranceName"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            app:icon="@drawable/right_arrow"
+            app:iconTint="@color/grey"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="7dp"
             android:layout_marginEnd="20dp"
-            app:boxStrokeErrorColor="@color/txtFieldError"
-            app:errorIconTint="@color/txtFieldError"
-            app:errorTextColor="@color/txtFieldError"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:startIconDrawable="@drawable/insurance__1_"
-            app:startIconTint="@color/grey">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_insuranceName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
-                android:hint="@string/insuranceName"
-                android:textSize="16sp" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:textColor="@color/grey"
+            app:iconSize="18dp"
+            app:iconGravity="end"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"/>
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/lyt_Contract"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"

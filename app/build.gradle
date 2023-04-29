@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -29,6 +30,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -50,6 +54,14 @@ dependencies {
     implementation 'com.wdullaer:materialdatetimepicker:4.2.3'
     //image handler
     implementation 'com.squareup.picasso:picasso:2.71828'
+    //QR Code
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    //circle image view
+    implementation'de.hdodenhof:circleimageview:3.1.0'
+
 
 
 }

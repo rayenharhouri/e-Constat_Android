@@ -1,13 +1,20 @@
 package com.example.econstat_android.fragments
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
+import android.graphics.drawable.InsetDrawable
 import android.os.Build
 import android.os.Bundle
+import android.support.annotation.MenuRes
+import android.util.TypedValue
 import android.view.*
 import android.widget.Button
-import androidx.fragment.app.Fragment
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.view.menu.MenuBuilder
+import androidx.appcompat.widget.PopupMenu
+import androidx.core.view.GravityCompat
+import androidx.fragment.app.Fragment
 import com.example.econstat_android.Model.Insurance
 import com.example.econstat_android.R
 import com.example.econstat_android.Services.ApiService
@@ -36,8 +43,7 @@ class insuranceFromFragment : Fragment() {
             return fragment
         }
     }
-    private lateinit var nameEt : TextInputEditText
-    private lateinit var nameLyt : TextInputLayout
+    private lateinit var menu_button_insurance : Button
     private lateinit var agencyEt : TextInputEditText
     private lateinit var agencyLyt : TextInputLayout
     private lateinit var validityFromEt : TextInputEditText
@@ -61,8 +67,7 @@ class insuranceFromFragment : Fragment() {
         val activity = requireActivity()
         val context = requireContext()
         setFullScreen(activity)
-        nameEt = view.findViewById(R.id.et_insuranceName)
-        nameLyt = view.findViewById(R.id.lyt_insuranceName)
+        menu_button_insurance = view.findViewById(R.id.menu_button_insurance)
         agencyEt = view.findViewById(R.id.et_agency)
         agencyLyt = view.findViewById(R.id.lyt_agency)
         validityFromEt = view.findViewById(R.id.et_validityFrom)
@@ -82,6 +87,35 @@ class insuranceFromFragment : Fragment() {
             validityState = true
             showDatePickerDialog(validityState)
         }
+        menu_button_insurance.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                val popupMenu = PopupMenu(requireContext(), menu_button_insurance)
+                popupMenu.menuInflater.inflate(R.menu.popup_menu_insurance, popupMenu.menu)
+                popupMenu.setOnMenuItemClickListener { item ->
+                    when (item.itemId) {
+                        R.id.option_1 -> {
+                            menu_button_insurance.setText("Star")
+                            true
+                        }
+                        R.id.option_2 -> {
+                            // Change the language to French here
+                            menu_button_insurance.setText("Ami")
+                            true
+                        }
+                        R.id.option_3 -> {
+                            menu_button_insurance.setText("Comar")
+                            true
+                        }
+                        R.id.option_4 -> {
+                            menu_button_insurance.setText("Hayet")
+                            true
+                        }
+                        else -> false
+                    }
+                }
+                popupMenu.show()
+            }
+        })
 
         //Getting insurance if Exist
         getInsurance()
@@ -90,7 +124,7 @@ class insuranceFromFragment : Fragment() {
         submitBtn.setOnClickListener {
             ApiService.insuranceService.newInsurance(
                 InsuranceService.insurancePostBody(
-                    nameEt.text.toString(),
+                    menu_button_insurance.text.toString(),
                     contractEt.text.toString(),
                     agencyEt.text.toString(),
                     validityFromEt.text.toString(),
@@ -190,7 +224,7 @@ class insuranceFromFragment : Fragment() {
                     println(insurance)
                     if(!(insurance?.image.isNullOrBlank())){
                         val transaction = parentFragmentManager.beginTransaction()
-                        transaction.replace(R.id.fragmentContainerView, insuranceFragment.newInstance(insurance.image))
+                        transaction.replace(R.id.fragment_container, insuranceFragment.newInstance(insurance.image))
                         transaction.commit()
                     }
                 } else if (response.code() != 200) {
@@ -207,4 +241,5 @@ class insuranceFromFragment : Fragment() {
                 t.printStackTrace()}
         })
     }
+
 }

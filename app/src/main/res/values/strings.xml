@@ -32,7 +32,6 @@
     <string name="insuranceForm">Please fill the missing information ⚠️</string>
     <string name="insuranceName">Insurance name</string>
     <string name="ContractNum">Contract Number</string>
-    <string name="agency">Agency</string>
     <string name="validityTo">Validity To</string>
     <string name="validityFrom">Validity From</string>
     <string name="logOut">Logout</string>
@@ -63,5 +62,54 @@
     <string name="Arabic">العربية</string>
     <string name="French">Français</string>
     <string name="Eng">English</string>
+    <string name="cars">Your Cars</string>
+    <string name="details">Car Details</string>
 
+    <string name="manage_your_cars_insurance">Manage Your Car insurance</string>
+    <string name="choose_your_car_brand">Choose Your Car Brand</string>
+    <string name="choose_your_car_insurance">Choose Your Car insurance</string>
+    <string name="choose_your_car_type">Choose Your Car Type</string>
+    <string name="agency">Agency</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+
+    <string name="validity">Validity of Your Car Insurance</string>
+
+    <string name="brand">Brand</string>
+    <string name="type">Type</string>
+
+
+    <string name="num_serie">numero Serie</string>
+    <string name="fiscal_power">fiscal Power</string>
+    <string name="num_contrat">Num Contrat</string>
+    <string name="num_immatriculation">Matricule</string>
+    <string name="add_new_car">Add New Car</string>
+
+
+    <string name="tun">TUN</string>
+    <string name="Star">Star</string>
+    <string name="Ami">Ami</string>
+    <string name="Hayet">Hayet</string>
+    <string name="comar">Comar</string>
+    <string-array name="brands">
+        <item> Alfa Romeo</item>
+        <item> Audi</item>
+        <item> Bentley</item>
+        <item> BMW</item>
+        <item> Brabus</item>
+        <item> Chery</item>
+        <item> Chevrolet</item>
+    </string-array>
+    <string-array name="types">
+        <item> essence</item>
+        <item> diesel</item>
+    </string-array>
+
+
+    <string-array name="insurances">
+    <item> star</item>
+    <item> amen</item>
+    <item> LMA</item>
+    <item> BST</item>
+    </string-array>
 </resources>

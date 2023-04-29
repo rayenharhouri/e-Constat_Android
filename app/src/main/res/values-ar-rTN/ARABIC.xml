@@ -63,4 +63,31 @@
     <string name="Arabic">العربية</string>
     <string name="French">الفرنسية</string>
     <string name="Eng">الإنجليزية</string>
+    <string name="cars">Your Cars</string>
+    <string name="details">Car Details</string>
+
+    <string name="manage_your_cars_insurance">Manage Your Car insurance</string>
+    <string name="choose_your_car_brand">Choose Your Car Brand</string>
+    <string name="choose_your_car_insurance">Choose Your Car insurance</string>
+    <string name="choose_your_car_type">Choose Your Car Type</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+
+    <string name="validity">Validity of Your Car Insurance</string>
+
+    <string name="brand">Brand</string>
+    <string name="type">Type</string>
+
+    <string name="Star">star</string>
+    <string name="Ami">ami</string>
+    <string name="Hayet">hayet</string>
+    <string name="comar">comar</string>
+    <string name="num_serie">numero Serie</string>
+    <string name="fiscal_power">fiscal Power</string>
+    <string name="num_contrat">Num Contrat</string>
+    <string name="num_immatriculation">Matricule</string>
+    <string name="add_new_car">Add New Car</string>
+
+
+    <string name="tun">TUN</string>
 </resources>
