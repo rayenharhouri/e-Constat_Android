@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewModel.HomeCarFragment">
+
+    <TextView
+        android:id="@+id/your_cars"
+        android:layout_width="176dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="264dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bordered_background"
+        android:gravity="center"
+        android:text="@string/cars"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/manage_your_cars_insurance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/manage_your_cars_insurance"
+        android:layout_width="358dp"
+        android:layout_height="94dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="45dp"
+        android:background="@drawable/shadow_background"
+        android:gravity="center"
+        android:text="@string/manage_your_cars_insurance"
+        android:textColor="@color/blue_label"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/rv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/your_cars" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="404dp"
+        android:layout_height="426dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="15dp"
+
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="2dp"
+        android:overScrollMode="never"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toTopOf="@+id/add_car"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/manage_your_cars_insurance"
+        tools:listitem="@layout/car_item" />
+
+    <ImageButton
+        android:id="@+id/add_car"
+        android:layout_width="172dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="#FFFFFF"
+        android:src="@drawable/add_car"
+        android:text="@string/add_new_car"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv">
+
+    </ImageButton>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

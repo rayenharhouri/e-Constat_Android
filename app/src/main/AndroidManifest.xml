@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.econstat_android">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,10 +14,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.EConstat_Android"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity android:name=".ViewModel.carB_DamageActivity" />
+        <activity android:name=".ViewModel.carA_DamageActivity" />
+        <activity android:name=".ViewModel.changePwd" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ViewModel.LoginActivity" />
+        <activity android:name=".ViewModel.ForgetPwdActivity" />
+        <activity android:name=".ViewModel.changePwdActivity" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ViewModel.forgetPwdOtpActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".ViewModel.SignUpActivity" />
+        <activity
+            android:name=".ViewModel.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -5,6 +5,44 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
+    <color name="black">#101010</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="button">#2067D2</color>
+    <color name="txtField">#636363</color>
+    <color name="txtFieldError">#d23220</color>
+    <color name="grey">#636363</color>
+    <color name="blueLight">#F4E2DE</color>
+    <color name="blueDark">#D94F04</color>
+    <color name="txt">#F29325</color>
+    <color name="lightGrey">#FFFFFF</color>
+    <color name="green">#2BA24C</color>
+    <color name="lightGreen">#00E5A6</color>
+    <color name="switch_thumb_color">#FF4081</color>
+    <color name="light_primary_color">#3F51B5</color>
+    <color name="light_primary_variant_color">#303F9F</color>
+    <color name="light_on_primary_color">#FFFFFF</color>
+    <color name="light_secondary_color">#FF4081</color>
+    <color name="light_secondary_variant_color">#FF4081</color>
+    <color name="light_on_secondary_color">#FFFFFF</color>
+    <color name="light_surface_color">#FFFFFF</color>
+    <color name="light_on_surface_color">#000000</color>
+    <color name="light_background_color">#F5F5F5</color>
+    <color name="light_on_background_color">#000000</color>
+    <color name="blue_label">#049DD9</color>
+    <color name="yellow">#DEA23A</color>
+
+    <color name="dark_primary_color">#1E1E1E</color>
+    <color name="dark_primary_variant_color">#3C3C3C</color>
+    <color name="dark_on_primary_color">#FFFFFF</color>
+    <color name="dark_secondary_color">#FF4081</color>
+    <color name="dark_secondary_variant_color">#FF4081</color>
+    <color name="dark_on_secondary_color">#FFFFFF</color>
+    <color name="dark_surface_color">#121212</color>
+    <color name="dark_on_surface_color">#FFFFFF</color>
+    <color name="dark_background_color">#212121</color>
+    <color name="dark_on_background_color">#FFFFFF</color>
+    <color name="gray">#DAD5D5</color>
+    <color name="red">#C11111</color>
+
+
 </resources>
