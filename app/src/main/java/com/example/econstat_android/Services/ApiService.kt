@@ -20,4 +20,7 @@ object ApiService {
     val carService: CarService by lazy {
         retrofit().create(CarService::class.java)
     }
+    val constatService: ConstatService by lazy {
+        retrofit().create(ConstatService::class.java)
+    }
 }

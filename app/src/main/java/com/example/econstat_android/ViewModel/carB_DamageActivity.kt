@@ -1,6 +1,7 @@
 package com.example.econstat_android.ViewModel
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
@@ -13,9 +14,15 @@ import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.ImageView
+import androidx.appcompat.app.AlertDialog
 import com.example.econstat_android.MainActivity
 import com.example.econstat_android.R
+import com.example.econstat_android.Services.ApiService
+import com.example.econstat_android.Services.CarService
 import com.google.android.material.button.MaterialButton
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class carB_DamageActivity : AppCompatActivity() {
@@ -78,9 +85,38 @@ class carB_DamageActivity : AppCompatActivity() {
             changeIcon(BR, bottomRight as MaterialButton?)
             BR = !BR
         }
-        confirm.setOnClickListener {
-            val intent = Intent(this@carB_DamageActivity,MainActivity::class.java)
-            startActivity(intent)
+        confirm.setOnClickListener{
+            ApiService.carService.addCarDamageA(
+                CarService.CarDamageAbody(
+                    TL,ML,BL,TR,MR,BR,"643dbe9c5d831b98f40d95ec"
+                )
+            ).enqueue(
+                object : Callback<CarService.CarDamageResponse> {
+                    override fun onResponse(
+                        call: Call<CarService.CarDamageResponse>,
+                        response: Response<CarService.CarDamageResponse>
+                    ) {
+                        if (response.code() == 200) {
+                            println("status code is " + response.code())
+                            showDialog(this@carB_DamageActivity, "","Created ✅")
+                        } else if (response.code() == 409) {
+                            showDialog(this@carB_DamageActivity, "error ","Caution ⚠️")
+                        }
+                        else if (response.code() == 400) {
+                            showDialog(this@carB_DamageActivity, "error","Caution ⚠️")
+                        }
+                        else {
+                            println("status code is " + response.code())
+                        }
+                    }
+
+                    override fun onFailure(call: Call<CarService.CarDamageResponse>, t: Throwable) {
+                        println("HTTP ERROR")
+                        t.printStackTrace()
+                    }
+                }
+            )
+
         }
         closeButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
@@ -107,4 +143,16 @@ class carB_DamageActivity : AppCompatActivity() {
             (button)?.setIconResource(R.drawable.shield)
         }
     }
-}
+    fun showDialog(activityName: Context, message:String,title: String){
+        val builder = AlertDialog.Builder(activityName)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("OK", null)
+        builder.setOnDismissListener{
+            val intent = Intent(this@carB_DamageActivity,MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        val dialog = builder.create()
+        dialog.show()
+    }}

@@ -9,25 +9,28 @@
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/drawable/rounded_bg.xml" value="0.1395" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/drawable/rounded_button.xml" value="0.1" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/drawable/rounded_button_green.xml" value="0.1" />
+        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/drawable/send_round_box.xml" value="0.1825" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/drawable/shadow_background.xml" value="0.222" />
-        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/activity_car_adamage.xml" value="0.10869565217391304" />
-        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/activity_car_bdamage.xml" value="0.18095238095238095" />
+        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/activity_car_adamage.xml" value="0.2" />
+        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/activity_car_bdamage.xml" value="0.4" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/activity_change_pwd.xml" value="0.264" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/car_item.xml" value="0.1" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/change_passwod_layout.xml" value="0.116751269035533" />
+        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/chatbot_fragment.xml" value="0.19375" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/forgetpwd_layout.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/forgetpwd_otp_layout.xml" value="0.18518518518518517" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/fragment_car_details.xml" value="0.264" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/fragment_home.xml" value="0.2" />
-        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/fragment_home_car.xml" value="0.1" />
+        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/fragment_home_car.xml" value="0.128" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/fragment_insurance_from.xml" value="0.2" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/fragment_insurance_layout.xml" value="0.23333333333333334" />
-        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/fragment_new_car.xml" value="0.1" />
+        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/fragment_new_car.xml" value="0.264" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/fragment_settings.xml" value="0.264" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/fragment_terms_and_condition.xml" value="0.24912280701754386" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/list_item.xml" value="0.17135416666666667" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/login_layout.xml" value="0.264" />
+        <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/message_item.xml" value="0.4" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/profile_layout.xml" value="0.2" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/rounded_button.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/layout/shadow_background.xml" value="0.1" />

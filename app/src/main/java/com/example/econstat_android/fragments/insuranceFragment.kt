@@ -9,6 +9,7 @@ import android.widget.ImageView
 import androidx.lifecycle.ViewModelProvider
 import com.example.econstat_android.Model.Insurance
 import com.example.econstat_android.R
+import com.example.econstat_android.ViewModel.HomeCarFragment
 import com.squareup.picasso.Picasso
 
 class insuranceFragment : Fragment() {
@@ -17,10 +18,10 @@ private lateinit var insurancePic : ImageView
 
     companion object {
         private const val ARG_INSURANCE = "insuranceImage"
-        fun newInstance(insuranceImage: String): insuranceFragment {
+        fun newInstance(insuranceImage: Insurance): insuranceFragment {
             val fragment = insuranceFragment()
             val args = Bundle()
-            args.putString(ARG_INSURANCE, insuranceImage)
+            args.putString(ARG_INSURANCE, insuranceImage.image)
             fragment.arguments = args
             return fragment
         }
@@ -29,6 +30,7 @@ private lateinit var insurancePic : ImageView
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         //insurance image from parameter
         arguments?.let {
             insuranceImage = it.getString(insuranceFragment.ARG_INSURANCE)

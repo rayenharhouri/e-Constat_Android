@@ -3,6 +3,7 @@ package com.example.econstat_android.fragments
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
+import android.content.SharedPreferences
 import android.graphics.drawable.InsetDrawable
 import android.os.Build
 import android.os.Bundle
@@ -11,6 +12,7 @@ import android.util.TypedValue
 import android.view.*
 import android.widget.Button
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.view.menu.MenuBuilder
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.view.GravityCompat
@@ -19,6 +21,7 @@ import com.example.econstat_android.Model.Insurance
 import com.example.econstat_android.R
 import com.example.econstat_android.Services.ApiService
 import com.example.econstat_android.Services.InsuranceService
+import com.example.econstat_android.utils.Constant
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.gson.Gson
@@ -222,9 +225,10 @@ class insuranceFromFragment : Fragment() {
                     val json = Gson().toJson(response.body()!!.insurance)
                     val insurance = Gson().fromJson(json,Insurance::class.java)
                     println(insurance)
+
                     if(!(insurance?.image.isNullOrBlank())){
                         val transaction = parentFragmentManager.beginTransaction()
-                        transaction.replace(R.id.fragment_container, insuranceFragment.newInstance(insurance.image))
+                        transaction.replace(R.id.fragment_container, insuranceFragment.newInstance(insurance))
                         transaction.commit()
                     }
                 } else if (response.code() != 200) {

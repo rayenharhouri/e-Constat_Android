@@ -124,6 +124,7 @@ class NewCarFragment : Fragment() {
                     requireContext().getSharedPreferences(Constant.SHARED_PREF_SESSION, Context.MODE_PRIVATE)
                 val userData = sharedPreferences.getString("USER_DATA", "")
                 val user = Gson().fromJson(userData, User::class.java)
+                println(user.token)
                 ApiService.carService.addCar(
                     CarService.CarBody(
                         brand,
@@ -140,14 +141,16 @@ class NewCarFragment : Fragment() {
                             response: Response<CarService.CarResponse>
                         ) {
                             if (response.code() == 200) {
-                                val intent = Intent(activity, MainActivity::class.java)
-                                startActivity(intent)
-                                activity?.finish()
+
                                 println("status code is " + response.code())
                                 showDialog(contextt, "Car Added ")
                             } else if (response.code() == 409) {
                                 showDialog(contextt, "Car Exist ")
-                            } else {
+                            }
+                            else if (response.code() == 400) {
+                                showDialog(contextt, "Invalid Token")
+                            }
+                            else {
                                 println("status code is " + response.code())
                             }
                         }
@@ -160,14 +163,6 @@ class NewCarFragment : Fragment() {
             }
         }
 
-
-
-
-
-
-
-
-        ///////////////////////////////////////////////////////////////////////:
 
     }
 
@@ -210,6 +205,11 @@ class NewCarFragment : Fragment() {
         builder.setTitle("Caution ⚠️")
         builder.setMessage(message)
         builder.setPositiveButton("OK", null)
+        builder.setOnDismissListener{
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
+        }
         val dialog = builder.create()
         dialog.show()
     }

@@ -1,10 +1,14 @@
 package com.example.econstat_android.ViewModel
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -15,7 +19,7 @@ import com.example.econstat_android.databinding.CarItemBinding
 import com.example.econstat_android.utils.Constant
 import de.hdodenhof.circleimageview.CircleImageView
 
-class CarAdapter(var cars: List<Car>,private val fragmentManager: FragmentManager) : RecyclerView.Adapter<CarAdapter.CarViewHolder>() {
+class CarAdapter(private val context: Context,var cars: List<Car>,private val fragmentManager: FragmentManager,private val isReport:Boolean) : RecyclerView.Adapter<CarAdapter.CarViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CarViewHolder {
 
@@ -33,34 +37,19 @@ class CarAdapter(var cars: List<Car>,private val fragmentManager: FragmentManage
         val tvMatricule = holder.itemView.findViewById<TextView>(R.id.tvMatricule)
         tvMatricule.text = car.numImmatriculation
 
-        /*val tvItemMatricule = holder.itemView.findViewById<TextView>(R.id.tvItemMatricule)
-        val tvItemType = holder.itemView.findViewById<TextView>(R.id.tvItemType)
-        val tvItemBrand = holder.itemView.findViewById<TextView>(R.id.tvItemBrand)
-
-        val tvItemFiscalPower = holder.itemView.findViewById<TextView>(R.id.tvItemFiscalPower)
-        val tvItemNumSerie = holder.itemView.findViewById<TextView>(R.id.tvItemNumSerie)
-
-
-
-        tvItemMatricule.text = car.numImmatriculation
-        tvItemType.text = car.type
-        tvItemBrand.text = car.brand
-        tvItemFiscalPower.text= car.fiscalPower.toString()
-        tvItemNumSerie.text = car.numSerie
-*/
-
-
-
-
-        ///
-        holder.itemView.setOnClickListener()
-        {
-            navigateToCarDetails(car, fragmentManager)
-            Toast.makeText(holder.itemView.context, "clicked", Toast.LENGTH_SHORT).show()
-
-
+        if(isReport){
+            holder.itemView.setOnClickListener()
+            {
+                navigateToCarDamage(car,context)
+                Toast.makeText(holder.itemView.context, "clicked", Toast.LENGTH_SHORT).show()
+            }
+        } else {
+            holder.itemView.setOnClickListener()
+            {
+                navigateToCarDetails(car, fragmentManager)
+                Toast.makeText(holder.itemView.context, "clicked", Toast.LENGTH_SHORT).show()
+            }
         }
-
 
     }
 
@@ -85,6 +74,11 @@ class CarAdapter(var cars: List<Car>,private val fragmentManager: FragmentManage
             addToBackStack(null)
             commit()
         }
+    }
+    private fun navigateToCarDamage(car: Car,context: Context) {
+        val intent = Intent(context, carA_DamageActivity::class.java)
+        intent.putExtra("car", car._id)
+        context.startActivity(intent)
     }
 }
 
