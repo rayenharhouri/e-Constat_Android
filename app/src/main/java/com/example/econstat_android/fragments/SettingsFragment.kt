@@ -159,6 +159,4 @@ class SettingsFragment : Fragment() {
         // Show the popup menu.
         popup.show()
     }
-
-
 }

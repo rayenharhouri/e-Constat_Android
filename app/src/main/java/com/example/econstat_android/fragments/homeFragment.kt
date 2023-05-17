@@ -8,15 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.example.econstat_android.R
+import com.example.econstat_android.ViewModel.HomeCarFragment
 import com.example.econstat_android.ViewModel.carA_DamageActivity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-private lateinit var reportBtn : Button
 class homeFragment : Fragment() {
+    private lateinit var reportBtn : Button
+    private var isReport : Boolean = true
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,9 +26,14 @@ class homeFragment : Fragment() {
 
         //Start Activity
         reportBtn.setOnClickListener{
-            val intent = Intent(requireContext(),carA_DamageActivity::class.java)
-            startActivity(intent)
-        }
+            val fragment = HomeCarFragment()
+            val args = Bundle()
+            args.putBoolean("isReport", isReport)
+            fragment.setArguments(args)
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.fragmentContainerView,fragment)
+                .commit()
+            }
         return view
     }
 

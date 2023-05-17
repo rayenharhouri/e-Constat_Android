@@ -1,7 +1,7 @@
 package com.example.econstat_android.ViewModel
 
 import android.content.Context
-import com.example.econstat_android.ViewModel.CarAdapter
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -9,15 +9,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.econstat_android.Model.Car
 import com.example.econstat_android.Model.User
 import com.example.econstat_android.R
 import com.example.econstat_android.Services.ApiService
 import com.example.econstat_android.Services.CarService
-import com.example.econstat_android.fragments.insuranceFromFragment
 import com.example.econstat_android.utils.Constant
 import com.google.gson.Gson
 import retrofit2.Call
@@ -28,8 +27,8 @@ class HomeCarFragment : Fragment() {
     private lateinit var rvCars: RecyclerView
     private lateinit var carAdapter: CarAdapter
     private lateinit var add_car_btn: ImageButton
-
-
+    private var isReport: Boolean = false
+    private  lateinit var txt : TextView
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,7 +36,6 @@ class HomeCarFragment : Fragment() {
         savedInstanceState: Bundle?
 
     ): View? {
-
         val fragmentManager = requireFragmentManager()
         val rootView = inflater.inflate(R.layout.fragment_home_car, container, false)
 
@@ -46,11 +44,14 @@ class HomeCarFragment : Fragment() {
             requireContext().getSharedPreferences(Constant.SHARED_PREF_SESSION, Context.MODE_PRIVATE)
         val userData = sharedPreferences.getString("USER_DATA", "")
         val user = Gson().fromJson(userData, User::class.java)
-println(user.token)
+        txt = rootView.findViewById(R.id.manage_your_cars_insurance)
+        arguments?.let {
+            isReport = it.getBoolean("isReport")
+        }
+        println(isReport)
         ApiService.carService.getCars(
             CarService.GetAllCarsBody(
                 user.token
-
             )
         ).enqueue(object : Callback<CarService.CarResponse> {
 
@@ -73,23 +74,24 @@ println(user.token)
         add_car_btn = rootView.findViewById(R.id.add_car)
         rvCars = rootView.findViewById(R.id.rv)
         rvCars.layoutManager = LinearLayoutManager(requireContext())
-        carAdapter = CarAdapter(listOf(),fragmentManager) // create an empty adapter
+        carAdapter = CarAdapter(requireContext(),listOf(),fragmentManager,isReport) // create an empty adapter
         rvCars.adapter = carAdapter
-
-
-
-
-        add_car_btn.setOnClickListener {
-            navigateToAddCar( fragmentManager)
+        if(isReport) {
+            add_car_btn.visibility = View.GONE
+            txt.text = "Select the Damaged Car"
         }
-
-
+        add_car_btn.setOnClickListener {
+            if (!isReport) {
+                navigateToAddCar(fragmentManager)
+            }
+        }
         return rootView
+    }
 
-
-
-
-
+    private fun navigateToCarDamage() {
+        val intent = Intent(requireContext(),carA_DamageActivity::class.java)
+        startActivity(intent)
+        requireActivity().finish()
     }
 
     private fun navigateToAddCar(fragmentManager: FragmentManager) {

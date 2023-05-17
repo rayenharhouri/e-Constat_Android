@@ -60,6 +60,7 @@ class insuranceFromFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         //Getting car id from parameter
         arguments?.let {
             carId = it.getString(ARG_CAR_ID)
@@ -70,6 +71,10 @@ class insuranceFromFragment : Fragment() {
         val activity = requireActivity()
         val context = requireContext()
         setFullScreen(activity)
+        //Getting insurance if Exist
+        getInsurance()
+
+
         menu_button_insurance = view.findViewById(R.id.menu_button_insurance)
         agencyEt = view.findViewById(R.id.et_agency)
         agencyLyt = view.findViewById(R.id.lyt_agency)
@@ -106,11 +111,11 @@ class insuranceFromFragment : Fragment() {
                             true
                         }
                         R.id.option_3 -> {
-                            menu_button_insurance.setText("Comar")
+                            menu_button_insurance.setText("Hayet")
                             true
                         }
                         R.id.option_4 -> {
-                            menu_button_insurance.setText("Hayet")
+                            menu_button_insurance.setText("Comar")
                             true
                         }
                         else -> false
@@ -120,8 +125,6 @@ class insuranceFromFragment : Fragment() {
             }
         })
 
-        //Getting insurance if Exist
-        getInsurance()
 
         //Request
         submitBtn.setOnClickListener {
@@ -160,8 +163,7 @@ class insuranceFromFragment : Fragment() {
 
             })
         }
-
-        return view
+     return view
     }
 
     private val dateSetListener = DatePickerDialog.OnDateSetListener { _, year, monthOfYear, dayOfMonth ->
@@ -222,13 +224,14 @@ class insuranceFromFragment : Fragment() {
                 response: Response<InsuranceService.InsuranceResponse>
             ) {
                 if (response.code() == 200) {
+                    println("here")
+                    println(carId)
                     val json = Gson().toJson(response.body()!!.insurance)
                     val insurance = Gson().fromJson(json,Insurance::class.java)
-                    println(insurance)
 
                     if(!(insurance?.image.isNullOrBlank())){
                         val transaction = parentFragmentManager.beginTransaction()
-                        transaction.replace(R.id.fragment_container, insuranceFragment.newInstance(insurance.image))
+                        transaction.replace(R.id.fragment_container, insuranceFragment.newInstance(insurance))
                         transaction.commit()
                     }
                 } else if (response.code() != 200) {

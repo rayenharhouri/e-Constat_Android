@@ -24,11 +24,11 @@
     <color name="light_secondary_color">#FF4081</color>
     <color name="light_secondary_variant_color">#FF4081</color>
     <color name="light_on_secondary_color">#FFFFFF</color>
-    <color name="light_surface_color">#FFFFFF</color>
+    <color name="light_surface_color">#d3d3d3</color>
     <color name="light_on_surface_color">#000000</color>
-    <color name="light_background_color">#F5F5F5</color>
+    <color name="light_background_color">#F1F1F1</color>
     <color name="light_on_background_color">#000000</color>
-    <color name="blue_label">#049DD9</color>
+    <color name="blue_label">#049DD0</color>
     <color name="yellow">#DEA23A</color>
 
     <color name="dark_primary_color">#1E1E1E</color>

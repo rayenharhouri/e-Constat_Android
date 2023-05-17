@@ -17,6 +17,10 @@
         android:icon="@drawable/avatar"
         android:title="@string/profile" />
     <item
+        android:id="@+id/navigation_chatBot"
+        android:icon="@drawable/robot"
+        android:title="@string/Assistance" />
+    <item
         android:id="@+id/navigation_settings"
         android:icon="@drawable/settings"
         android:title="@string/settings" />

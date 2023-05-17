@@ -11,6 +11,7 @@ import com.example.econstat_android.Services.ApiService
 import com.example.econstat_android.Services.InsuranceService
 import com.example.econstat_android.ViewModel.HomeCarFragment
 import com.example.econstat_android.ViewModel.profileActivity
+import com.example.econstat_android.fragments.ChatBotFragment
 import com.example.econstat_android.fragments.SettingsFragment
 import com.example.econstat_android.fragments.homeFragment
 import com.example.econstat_android.fragments.insuranceFromFragment
@@ -57,6 +58,13 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.navigation_settings -> {
                     val fragment = SettingsFragment()
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.fragmentContainerView, fragment)
+                        .commit()
+                    true
+                }
+                R.id.navigation_chatBot -> {
+                    val fragment = ChatBotFragment()
                     supportFragmentManager.beginTransaction()
                         .replace(R.id.fragmentContainerView, fragment)
                         .commit()
