@@ -1,8 +1,10 @@
 package com.example.econstat_android.Model
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import java.io.Serializable
 import java.util.*
-
+@Parcelize
 data class User(
         val _id: String,
         val email: String,
@@ -14,4 +16,4 @@ data class User(
         val delevredOn: String,
         val number: String,
         val token: String
-    ) : Serializable
+    ) : Serializable, Parcelable

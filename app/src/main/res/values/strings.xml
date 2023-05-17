@@ -92,6 +92,18 @@
     <string name="Hayet">Hayet</string>
     <string name="comar">Comar</string>
     <string name="Assistance">Assistance</string>
+
+
+    <string name="helper_activity">HelperActivity</string>
+    <string name="showing_code_in_fragment">Showing Code in Fragment</string>
+    <string name="scan_qr_code">SCAN QR CODE</string>
+    <string name="name">Name</string>
+    <string name="empty">---</string>
+    <string name="site_name">Site Name</string>
+    <string name="scan_a_code">Click To Scan QR Code</string>
+    <string name="result_not_found">Result Not Found</string>
+    <string name="show_scanner_from_fragment">Show Scanner From Fragment</string>
+
     <string-array name="brands">
         <item> Alfa Romeo</item>
         <item> Audi</item>
@@ -108,9 +120,9 @@
 
 
     <string-array name="insurances">
-    <item> star</item>
-    <item> amen</item>
-    <item> LMA</item>
-    <item> BST</item>
+        <item> star</item>
+        <item> amen</item>
+        <item> LMA</item>
+        <item> BST</item>
     </string-array>
 </resources>

@@ -16,12 +16,12 @@ import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.econstat_android.MainActivity
-import com.example.econstat_android.Model.Car
-import com.example.econstat_android.Model.CarDamage
-import com.example.econstat_android.Model.User
+import com.example.econstat_android.Model.*
 import com.example.econstat_android.Services.ApiService
 import com.example.econstat_android.Services.CarService
 import com.example.econstat_android.Services.ConstatService
+import com.example.econstat_android.Services.InsuranceService
+import com.example.econstat_android.fragments.insuranceFragment
 import com.example.econstat_android.utils.Constant
 import com.google.android.material.button.MaterialButton
 import com.google.gson.Gson
@@ -39,7 +39,8 @@ class carA_DamageActivity : AppCompatActivity() {
     private lateinit var bottomLeft : Button
     private lateinit var bottomRight : Button
     private lateinit var confirm : Button
-
+    var insuranceId = ""
+    var reportId = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(com.example.econstat_android.R.layout.activity_car_adamage)
@@ -56,6 +57,7 @@ class carA_DamageActivity : AppCompatActivity() {
         var MR = true
         var BR = true
         //INIT
+        getInsurance()
         topLeft = findViewById<MaterialButton>(com.example.econstat_android.R.id.topLeft)
         topRight = findViewById<MaterialButton>(com.example.econstat_android.R.id.topRight)
         midLeft = findViewById<MaterialButton>(com.example.econstat_android.R.id.midLeft)
@@ -104,13 +106,12 @@ class carA_DamageActivity : AppCompatActivity() {
                         response: Response<CarService.CarDamageResponse>
                     ) {
                         if (response.code() == 200) {
-                            println("status code is " + response.code())
                             val json = Gson().toJson(response.body()!!.carDamage)
                             val carDamage = Gson().fromJson(json, CarDamage::class.java)
-                            val sharedPreferences = getSharedPreferences(Constant.SHARED_PREF_SESSION, MODE_PRIVATE)
-                            val insuranceData = sharedPreferences.getString("insurance", "")
-                            constatA(insuranceData.toString(),carDamage._id)
-                            showDialog(this@carA_DamageActivity, "Please read instruction on the next page","Created ✅")
+                            if(insuranceId != ""){
+                                constatA(insuranceId,carDamage._id,carId)
+                                showDialog(this@carA_DamageActivity, "Please read instruction on the next page","Created ✅")
+                            }
 
                         } else if (response.code() == 409) {
                             showDialog(this@carA_DamageActivity, "error ","Caution ⚠️")
@@ -164,16 +165,18 @@ class carA_DamageActivity : AppCompatActivity() {
         builder.setMessage(message)
         builder.setPositiveButton("OK", null)
         builder.setOnDismissListener{
-            val intent = Intent(this@carA_DamageActivity,carB_DamageActivity::class.java)
+            val intent = Intent(this@carA_DamageActivity,carB_DamageActivity::class.java).apply {
+                putExtra("reportId",  reportId)
+            }
             startActivity(intent)
             finish()
         }
         val dialog = builder.create()
         dialog.show()
     }
-    fun constatA(insurance: String,carDamage: String) {
+    fun constatA(insurance: String,carDamage: String,carId : String) {
         ApiService.constatService.NewConstat(
-            ConstatService.constatBody(insurance,carDamage)
+            ConstatService.constatBody(insurance,carDamage,carId)
         ).enqueue(
             object : Callback<ConstatService.ConstatResponse> {
                 override fun onResponse(
@@ -181,7 +184,9 @@ class carA_DamageActivity : AppCompatActivity() {
                     response: Response<ConstatService.ConstatResponse>
                 ) {
                     if (response.code() == 200) {
-                        showDialog(this@carA_DamageActivity, "The first part of the report is done","Created ✅")
+                        val json = Gson().toJson(response.body()!!.constat)
+                        val report = Gson().fromJson(json, Constat::class.java)
+                        reportId = report._id
                     } else if (response.code() == 409) {
                         showDialog(this@carA_DamageActivity, "error ","Caution ⚠️")
                     }
@@ -199,5 +204,38 @@ class carA_DamageActivity : AppCompatActivity() {
                 }
             }
         )
+    }
+    fun getInsurance() {
+    ApiService.insuranceService.getInsurance(
+    InsuranceService.getInsurancePostBody(
+    carId
+    )
+    ).enqueue( object : Callback<InsuranceService.InsuranceResponse> {
+        override fun onResponse(
+            call: Call<InsuranceService.InsuranceResponse>,
+            response: Response<InsuranceService.InsuranceResponse>
+        ) {
+            if (response.code() == 200) {
+                try {
+                    val json = Gson().toJson(response.body()!!.insurance)
+                    val insurance = Gson().fromJson(json, Insurance::class.java)
+                    insuranceId = insurance._id
+                } catch (e: Exception) {
+                    showDialog(this@carA_DamageActivity, "This Car don't have insurance","Caution")
+                }
+
+            } else if (response.code() != 200) {
+                println("Error occured: "+response.code())
+            }
+
+            else {
+                println("status code is " + response.code())
+            }
+        }
+
+        override fun onFailure(call: Call<InsuranceService.InsuranceResponse>, t: Throwable) {
+            println("HTTP ERROR")
+            t.printStackTrace()}
+    })
     }
 }

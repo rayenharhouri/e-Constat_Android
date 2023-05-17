@@ -90,4 +90,18 @@
 
 
     <string name="tun">TUN</string>
+
+
+    <string name="Assistance">Assistance</string>
+
+
+    <string name="helper_activity">HelperActivity</string>
+    <string name="showing_code_in_fragment">Showing Code in Fragment</string>
+    <string name="scan_qr_code">SCAN QR CODE</string>
+    <string name="name">Name</string>
+    <string name="empty">---</string>
+    <string name="site_name">Site Name</string>
+    <string name="scan_a_code">Scan a QR Code</string>
+    <string name="result_not_found">Result Not Found</string>
+    <string name="show_scanner_from_fragment">Show Scanner From Fragment</string>
 </resources>

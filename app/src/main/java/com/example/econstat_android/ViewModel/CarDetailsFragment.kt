@@ -1,9 +1,11 @@
 package com.example.econstat_android.ViewModel
 
+import android.content.Context
 import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,12 +15,20 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import com.example.econstat_android.Model.Car
+import com.example.econstat_android.Model.Insurance
+import com.example.econstat_android.Model.User
 import com.example.econstat_android.R
+import com.example.econstat_android.Services.ApiService
+import com.example.econstat_android.Services.InsuranceService
 import com.example.econstat_android.fragments.insuranceFromFragment
 import com.example.econstat_android.utils.Constant
+import com.google.gson.Gson
 import com.squareup.picasso.Picasso
 import com.google.zxing.BarcodeFormat
 import com.journeyapps.barcodescanner.BarcodeEncoder
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CarDetailsFragment : Fragment() {
 
@@ -32,6 +42,7 @@ class CarDetailsFragment : Fragment() {
     private lateinit var imageCar: ImageView
     private lateinit var btn_qr: ImageButton
     var qrGenerated = false
+    var insuranceId = ""
 
 
 
@@ -51,14 +62,13 @@ class CarDetailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //INIT
+        getInsurance()
 
         val    car = arguments?.getParcelable<Car>("car")!!
 
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_car_details, container, false)
-
-
 
     }
 
@@ -94,10 +104,11 @@ class CarDetailsFragment : Fragment() {
                 Picasso.get().load(Constant.image_URL + car.carImage).into(imageCar)
                 qrGenerated = true
             } else {
-                generateQrCode(car._id)
-
+                var qrCodeContent = car._id + getUserData()._id + insuranceId
+                generateQrCode(qrCodeContent)
                 qrGenerated = false
-            }        }
+            }
+        }
         //Insurance
         val fragment = insuranceFromFragment.newInstance(car._id)
         fragmentManager?.beginTransaction()!!
@@ -143,6 +154,47 @@ class CarDetailsFragment : Fragment() {
         imageCar.setImageBitmap(bitmap)
 
     }
+    private fun getUserData(): User {
+        val sharedPreferences =
+            requireContext().getSharedPreferences(
+                Constant.SHARED_PREF_SESSION,
+                Context.MODE_PRIVATE
+            )
+        val userData = sharedPreferences.getString("USER_DATA", "")
+        return Gson().fromJson(userData, User::class.java)
+    }
+    fun getInsurance() {
+        ApiService.insuranceService.getInsurance(
+            InsuranceService.getInsurancePostBody(
+                car._id
+            )
+        ).enqueue( object : Callback<InsuranceService.InsuranceResponse> {
+            override fun onResponse(
+                call: Call<InsuranceService.InsuranceResponse>,
+                response: Response<InsuranceService.InsuranceResponse>
+            ) {
+                if (response.code() == 200) {
+                    try {
+                        val json = Gson().toJson(response.body()!!.insurance)
+                        val insurance = Gson().fromJson(json, Insurance::class.java)
+                        insuranceId = insurance._id
+                    } catch (e: Exception) {
+                        println(e.stackTrace)
+                    }
 
+                } else if (response.code() != 200) {
+                    println("Error occured: "+response.code())
+                }
+
+                else {
+                    println("status code is " + response.code())
+                }
+            }
+
+            override fun onFailure(call: Call<InsuranceService.InsuranceResponse>, t: Throwable) {
+                println("HTTP ERROR")
+                t.printStackTrace()}
+        })
+    }
 
 }

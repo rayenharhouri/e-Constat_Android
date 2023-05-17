@@ -69,6 +69,7 @@ class LoginActivity : AppCompatActivity(){
             startActivity(intent)
         }
         signInBtn.setOnClickListener{
+            println("CLicked")
             signIn(this@LoginActivity)
         }
     }

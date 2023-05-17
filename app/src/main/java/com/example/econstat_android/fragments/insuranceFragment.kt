@@ -13,7 +13,8 @@ import com.example.econstat_android.ViewModel.HomeCarFragment
 import com.squareup.picasso.Picasso
 
 class insuranceFragment : Fragment() {
-private lateinit var insurancePic : ImageView
+
+    private lateinit var insurancePic : ImageView
     private var insuranceImage: String? = null
 
     companion object {
@@ -33,7 +34,7 @@ private lateinit var insurancePic : ImageView
 
         //insurance image from parameter
         arguments?.let {
-            insuranceImage = it.getString(insuranceFragment.ARG_INSURANCE)
+            insuranceImage = it.getString(ARG_INSURANCE)
         }
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_insurance_layout, container, false)

@@ -4,11 +4,11 @@ import java.io.Serializable
 
 data class Constat(
     val _id : String,
-    val userA : String,
-    val userB : String,
-    val carDamageA : String,
-    val carDamageB : String,
-    val carA : String,
+    val UserA : String,
+    val UserB : String,
+    val CarDamageA : String,
+    val CarDamageB : String,
+    val CarA : String,
     val carB : String,
     val InsuranceA : String,
     val InsuranceB : String

@@ -19,6 +19,7 @@ import com.example.econstat_android.MainActivity
 import com.example.econstat_android.R
 import com.example.econstat_android.Services.ApiService
 import com.example.econstat_android.Services.CarService
+import com.example.econstat_android.ViewModel.QrCode.QrCodeScanner
 import com.google.android.material.button.MaterialButton
 import retrofit2.Call
 import retrofit2.Callback
@@ -34,12 +35,14 @@ class carB_DamageActivity : AppCompatActivity() {
     private lateinit var bottomLeft : Button
     private lateinit var bottomRight : Button
     private lateinit var confirm : Button
+    var reportId : String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_car_bdamage)
         supportActionBar?.hide()
         setFullScreen(this@carB_DamageActivity)
         //INIT
+        reportId = intent.getStringExtra("reportId").toString()
         carb = findViewById(R.id.imageView2)
         carb.visibility = View.GONE
         var TL = true
@@ -149,7 +152,9 @@ class carB_DamageActivity : AppCompatActivity() {
         builder.setMessage(message)
         builder.setPositiveButton("OK", null)
         builder.setOnDismissListener{
-            val intent = Intent(this@carB_DamageActivity,MainActivity::class.java)
+            val intent = Intent(this@carB_DamageActivity,QrCodeScanner::class.java).apply {
+                putExtra("reportId",  reportId)
+            }
             startActivity(intent)
             finish()
         }
