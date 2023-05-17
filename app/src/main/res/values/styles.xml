@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight">
+    <!-- Light mode colors -->
+    <item name="colorPrimary">@color/light_primary_color</item>
+
+
+</style>
+
+    <style name="AppTheme.Dark" parent="Theme.MaterialComponents.DayNight">
+        <!-- Dark mode colors -->
+        <item name="colorPrimary">@color/dark_primary_color</item>
+
+    </style></resources>

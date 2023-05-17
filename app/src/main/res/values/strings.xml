@@ -1,3 +1,128 @@
 <resources>
     <string name="app_name">eConstat_Android</string>
+    <string name="email">Exp: email@example.com</string>
+    <string name="lastName">Last Name</string>
+    <string name="address">address</string>
+    <string name="firstName">First Name</string>
+    <string name="password">password</string>
+    <string name="confirmPassword">Confirm password</string>
+    <string name="rememberMe">Remember me</string>
+    <string name="newAroundHere">New around here?</string>
+    <string name="signup">Sign Up</string>
+    <string name="signIn">Sign In</string>
+    <string name="forgotpwd">Forget password</string>
+    <string name="must_not_be_empty">Must not be empty !</string>
+    <string name="check_email">Check your email!</string>
+    <string name="driverLicense">driver license</string>
+    <string name="signuptxt">Welcome to our sign up page! Please fill out the form below to create your account 📝.</string>
+    <string name="forgetPwd_message">To restore your account, please enter the email address associated with your account below.</string>
+    <string name="next">Next</string>
+    <string name="otp">OTP VERIFICATION</string>
+    <string name="confirm">Confirm</string>
+    <string name="changePwd">Change Password</string>
+    <string name="updatePwd">Update Password</string>
+    <string name="oldPwd">Old Password</string>
+    <string name="newPwd">New Password</string>
+    <string name="newPwdC">New Password Confirm</string>
+    <string name="UnlockFields">Click the icon to edit</string>
+    <string name="home">Home</string>
+    <string name="car">My Cars</string>
+    <string name="profile">My Profile</string>
+    <string name="report">New accident report</string>
+    <string name="insuranceForm">Please fill the missing information ⚠️</string>
+    <string name="insuranceName">Insurance name</string>
+    <string name="ContractNum">Contract Number</string>
+    <string name="validityTo">Validity To</string>
+    <string name="validityFrom">Validity From</string>
+    <string name="logOut">Logout</string>
+    <string name="languages">Languages</string>
+    <string name="general">General Settings</string>
+    <string name="TermsAndCondition">Terms And Conditions</string>
+    <string name="TC_1">Welcome to eConstat TN, an app that helps you easily and quickly fill in reports. In order to use the app, you will need to create an account. By creating an account and using the app, you agree to be bound by these terms and conditions.</string>
+    <string name="TC_2"><b>Data Collection</b>eConstat TN collects personal information from you in order to provide you with the best possible experience. This includes information such as your name, email address, address, information about your car, and information about your car s insurance in order to make the process easier, as well as any other information you choose to provide.eConstat TN does not display any advertising to you. </string>
+    <string name="TC_3"><b>Device AccesseConstat</b>\n TN requires access to your device s camera in order to function properly. By using the app, you grant eConstat TN permission to access your device s camera.</string>
+    <string name="TC_4"><b>Third-Party Integrations</b>\neConstat TN uses a Node.js server to store and process data. By using the app, you agree to the collection, use, and sharing of your data as described in these terms and conditions.</string>
+    <string name="TC_5"><b>Changes to These Terms</b>\neConstat TN reserves the right to update these terms and conditions at any time. If we make any changes, we will post the revised terms and conditions on this page and will indicate the effective date of the revised terms and conditions. We encourage you to review these terms and conditions periodically to stay informed about our practices.</string>
+    <string name="TC_6"><b>Contact Us</b>If you have any questions about these terms and conditions, please contact us at rayen.harhouri@esprit.tn</string>
+    <string name="updatedDate">Update 4/19/2023</string>
+    <string name="version">Version</string>
+    <string name="versionNum">1.0.1</string>
+    <string name="darkMode">Dark Mode</string>
+    <string name="damageDesc">This icon represents the location of any damage to your car . If the icon is displayed , it indicates that your car has been damaged in that particular location . For example , if the icon is located at the top left of the screen , it means that your car has been damaged in the top left area.</string>
+    <string name="shieldDesc">This icon represents the location of any protected parts of your car.If the shield icon is displayed, it indicates that your car does not have any damage in that particular location.For example,if the shield icon is located at the top left,means that that area of your car does not have any damage.</string>
+    <string name="Step1Detail">In this step, you can report the location of any damage to your carA. To do so, simply click on the corresponding icon to change its status. Please refer to the icon descriptions below for more details.</string>
+    <string name="Step1">STEP ONE</string>
+    <string name="Step2">STEP TWO</string>
+    <string name="Step2Detail">In this step, you can report the location of any damage to your carB. To do so, simply click on the corresponding icon to change its status. Please refer to the icon descriptions below for more details.</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="settings">Settings</string>
+    <string name="Arabic">العربية</string>
+    <string name="French">Français</string>
+    <string name="Eng">English</string>
+    <string name="cars">Your Cars</string>
+    <string name="details">Car Details</string>
+
+    <string name="manage_your_cars_insurance">Manage Your Car insurance</string>
+    <string name="choose_your_car_brand">Choose Your Car Brand</string>
+    <string name="choose_your_car_insurance">Choose Your Car insurance</string>
+    <string name="choose_your_car_type">Choose Your Car Type</string>
+    <string name="agency">Agency</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+
+    <string name="validity">Validity of Your Car Insurance</string>
+
+    <string name="brand">Brand</string>
+    <string name="type">Type</string>
+
+
+    <string name="num_serie">numero Serie</string>
+    <string name="fiscal_power">fiscal Power</string>
+    <string name="num_contrat">Num Contrat</string>
+    <string name="num_immatriculation">Matricule</string>
+    <string name="add_new_car">Add New Car</string>
+
+
+    <string name="tun">TUN</string>
+    <string name="Star">Star</string>
+    <string name="Ami">Ami</string>
+    <string name="Hayet">Hayet</string>
+    <string name="comar">Comar</string>
+    <string name="Assistance">Assistance</string>
+
+
+    <string name="helper_activity">HelperActivity</string>
+    <string name="showing_code_in_fragment">Showing Code in Fragment</string>
+    <string name="scan_qr_code">SCAN QR CODE</string>
+    <string name="name">Name</string>
+    <string name="empty">---</string>
+    <string name="site_name">Site Name</string>
+    <string name="scan_a_code">Click To Scan QR Code</string>
+    <string name="result_not_found">Result Not Found</string>
+    <string name="show_scanner_from_fragment">Show Scanner From Fragment</string>
+
+    <string-array name="brands">
+        <item> Alfa Romeo</item>
+        <item> Audi</item>
+        <item> Bentley</item>
+        <item> BMW</item>
+        <item> Brabus</item>
+        <item> Chery</item>
+        <item> Chevrolet</item>
+    </string-array>
+    <string-array name="types">
+        <item> essence</item>
+        <item> diesel</item>
+    </string-array>
+
+
+    <string-array name="insurances">
+        <item> star</item>
+        <item> amen</item>
+        <item> LMA</item>
+        <item> BST</item>
+    </string-array>
 </resources>
