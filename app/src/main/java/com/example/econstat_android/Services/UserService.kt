@@ -13,7 +13,7 @@ interface UserService {
     data class UserResponse(
         @SerializedName("user")
         val user: User
-    )
+        )
 
     data class UserBody(
         val name: String,
