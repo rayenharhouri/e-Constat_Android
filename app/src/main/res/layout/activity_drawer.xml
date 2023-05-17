@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewModel.Drawer">
+    <GridLayout
+        android:id="@+id/ll"
+        android:layout_width="893dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/cadre"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/ll2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/carb1"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/carb1"
+            android:layout_marginLeft="5dp"/>
+
+        <View
+            android:id="@+id/carb2"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/carb1"
+            android:layout_marginLeft="5dp"/>
+
+        <View
+            android:id="@+id/carb3"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/carb1"
+            android:layout_marginLeft="8dp"/>
+
+        <View
+            android:id="@+id/carb4"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/carb1"
+            android:layout_marginLeft="8dp"/>
+
+        <View
+            android:id="@+id/carb5"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:background="@drawable/carb1"
+            android:layout_marginLeft="8dp"/>
+
+        <View
+            android:id="@+id/cara1"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/cara1"
+            android:layout_marginLeft="8dp"/>
+
+        <View
+            android:id="@+id/cara2"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/cara1"
+            android:layout_marginLeft="8dp"/>
+
+        <View
+            android:id="@+id/cara3"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/cara1"
+            android:layout_marginLeft="8dp"/>
+
+        <View
+            android:id="@+id/cara4"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/cara1"
+            android:layout_marginLeft="8dp"/>
+
+        <View
+            android:id="@+id/cara5"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:background="@drawable/cara1"
+            android:layout_marginLeft="8dp"/>
+
+        <View
+            android:id="@+id/truck1"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/truck" />
+
+        <View
+            android:id="@+id/truck2"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/truck" />
+
+        <View
+            android:id="@+id/truck3"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/truck" />
+
+        <View
+            android:id="@+id/left1"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/left" />
+
+        <View
+            android:id="@+id/left2"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/left" />
+
+        <View
+            android:id="@+id/right1"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/right" />
+
+        <View
+            android:id="@+id/right2"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/right" />
+
+        <View
+            android:id="@+id/half1"
+            android:layout_width="74dp"
+            android:layout_height="57dp"
+            android:layout_row="0"
+            android:layout_column="6"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/half1" />
+
+        <View
+            android:id="@+id/half2"
+            android:layout_width="74dp"
+            android:layout_height="57dp"
+            android:layout_row="0"
+            android:layout_column="6"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/half1" />
+
+        <View
+            android:id="@+id/half3"
+            android:layout_width="74dp"
+            android:layout_height="57dp"
+            android:layout_row="0"
+            android:layout_column="7"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/half2" />
+
+        <View
+            android:id="@+id/half4"
+            android:layout_width="74dp"
+            android:layout_height="57dp"
+            android:layout_row="0"
+            android:layout_column="7"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/half2" />
+
+        <View
+            android:id="@+id/crash1"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/crash" />
+
+        <View
+            android:id="@+id/crash2"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/crash" />
+        <View
+            android:id="@+id/crash3"
+            android:layout_width="70dp"
+            android:layout_height="match_parent"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/crash" />
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll2"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/ll3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll3"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/road"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/ll2"
+        app:layout_constraintTop_toBottomOf="@+id/ll">
+
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll4"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/road"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/ll3"
+        app:layout_constraintTop_toBottomOf="@+id/ll">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll5"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/road"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/ll4"
+        app:layout_constraintTop_toBottomOf="@+id/ll">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll6"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/road"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/ll5"
+        app:layout_constraintTop_toBottomOf="@+id/ll">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll7"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/road"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/ll6"
+        app:layout_constraintTop_toBottomOf="@+id/ll">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll8"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:background="@drawable/road"
+
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/ll7"
+        app:layout_constraintTop_toBottomOf="@+id/ll">
+
+    </GridLayout>
+
+
+    <GridLayout
+        android:id="@+id/ll9"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toStartOf="@+id/ll3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll2">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll10"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:background="@drawable/road"
+        android:gravity="center"
+        android:orientation="horizontal"
+
+        app:layout_constraintStart_toEndOf="@+id/ll15"
+        app:layout_constraintTop_toBottomOf="@+id/ll4">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll11"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:background="@drawable/road"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/ll10"
+        app:layout_constraintTop_toBottomOf="@+id/ll5">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll12"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:background="@drawable/road"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/ll11"
+        app:layout_constraintTop_toBottomOf="@+id/ll6">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll13"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:background="@drawable/road"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/ll12"
+        app:layout_constraintTop_toBottomOf="@+id/ll7">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll14"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@drawable/road"
+
+        app:layout_constraintStart_toEndOf="@+id/ll7"
+        app:layout_constraintTop_toBottomOf="@+id/ll7">
+
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/ll15"
+        android:layout_width="105dp"
+        android:layout_height="106dp"
+        android:background="@drawable/road"
+        android:gravity="center"
+
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/ll9"
+        app:layout_constraintTop_toBottomOf="@+id/ll3">
+
+    </GridLayout>
+
+    <ImageButton
+        android:id="@+id/imageButtonCapture"
+        android:layout_width="80dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="800dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="45dp"
+        android:background="@drawable/done"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll14" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

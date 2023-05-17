@@ -107,9 +107,9 @@
 
 
     <string-array name="insurances">
-    <item> star</item>
-    <item> amen</item>
-    <item> LMA</item>
-    <item> BST</item>
+        <item> star</item>
+        <item> amen</item>
+        <item> LMA</item>
+        <item> BST</item>
     </string-array>
 </resources>

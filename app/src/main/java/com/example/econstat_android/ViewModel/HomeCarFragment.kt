@@ -12,6 +12,7 @@ import android.widget.ImageButton
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.econstat_android.Model.Car
 import com.example.econstat_android.Model.User
 import com.example.econstat_android.R
 import com.example.econstat_android.Services.ApiService
@@ -28,12 +29,15 @@ class HomeCarFragment : Fragment() {
     private lateinit var carAdapter: CarAdapter
     private lateinit var add_car_btn: ImageButton
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
 
     ): View? {
+
         val fragmentManager = requireFragmentManager()
         val rootView = inflater.inflate(R.layout.fragment_home_car, container, false)
 
@@ -42,10 +46,11 @@ class HomeCarFragment : Fragment() {
             requireContext().getSharedPreferences(Constant.SHARED_PREF_SESSION, Context.MODE_PRIVATE)
         val userData = sharedPreferences.getString("USER_DATA", "")
         val user = Gson().fromJson(userData, User::class.java)
-
+println(user.token)
         ApiService.carService.getCars(
             CarService.GetAllCarsBody(
                 user.token
+
             )
         ).enqueue(object : Callback<CarService.CarResponse> {
 

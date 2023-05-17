@@ -33,21 +33,7 @@ class CarAdapter(var cars: List<Car>,private val fragmentManager: FragmentManage
         val tvMatricule = holder.itemView.findViewById<TextView>(R.id.tvMatricule)
         tvMatricule.text = car.numImmatriculation
 
-        /*val tvItemMatricule = holder.itemView.findViewById<TextView>(R.id.tvItemMatricule)
-        val tvItemType = holder.itemView.findViewById<TextView>(R.id.tvItemType)
-        val tvItemBrand = holder.itemView.findViewById<TextView>(R.id.tvItemBrand)
 
-        val tvItemFiscalPower = holder.itemView.findViewById<TextView>(R.id.tvItemFiscalPower)
-        val tvItemNumSerie = holder.itemView.findViewById<TextView>(R.id.tvItemNumSerie)
-
-
-
-        tvItemMatricule.text = car.numImmatriculation
-        tvItemType.text = car.type
-        tvItemBrand.text = car.brand
-        tvItemFiscalPower.text= car.fiscalPower.toString()
-        tvItemNumSerie.text = car.numSerie
-*/
 
 
 

@@ -39,6 +39,15 @@
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/menu/languages.xml" value="0.1703125" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/menu/popup_menu.xml" value="0.2203125" />
         <entry key="..\:/Users/MSI/e-Constat_Android/app/src/main/res/menu/popup_menu_insurance.xml" value="0.1" />
+        <entry key="..\:/Users/Mezen Bayounes/Desktop/e-Constat_Android/app/src/main/res/drawable-v24/bordered_background.xml" value="0.2475" />
+        <entry key="..\:/Users/Mezen Bayounes/Desktop/e-Constat_Android/app/src/main/res/drawable-v24/yellow_brd.xml" value="0.2475" />
+        <entry key="..\:/Users/Mezen Bayounes/Desktop/e-Constat_Android/app/src/main/res/drawable-v24/yellow_brd_nc.xml" value="0.2475" />
+        <entry key="..\:/Users/Mezen Bayounes/Desktop/e-Constat_Android/app/src/main/res/drawable/cadre.xml" value="0.1115" />
+        <entry key="..\:/Users/Mezen Bayounes/Desktop/e-Constat_Android/app/src/main/res/layout/activity_drawer.xml" value="0.21468926553672316" />
+        <entry key="..\:/Users/Mezen Bayounes/Desktop/e-Constat_Android/app/src/main/res/layout/activity_main.xml" value="0.22735507246376813" />
+        <entry key="..\:/Users/Mezen Bayounes/Desktop/e-Constat_Android/app/src/main/res/layout/fragment_home_car.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/Mezen Bayounes/Desktop/e-Constat_Android/app/src/main/res/layout/fragment_insurance_from.xml" value="0.176" />
+        <entry key="..\:/Users/Mezen Bayounes/Desktop/e-Constat_Android/app/src/main/res/layout/fragment_new_car.xml" value="0.2259963768115942" />
       </map>
     </option>
   </component>

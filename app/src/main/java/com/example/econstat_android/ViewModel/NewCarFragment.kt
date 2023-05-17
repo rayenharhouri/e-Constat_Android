@@ -50,10 +50,10 @@ class NewCarFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_new_car, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+            super.onViewCreated(view, savedInstanceState)
         spinnerBrand = view.findViewById(R.id.spinner_brand)
-        spinnerType = view.findViewById(R.id.spinner_type)
+            spinnerType = view.findViewById(R.id.spinner_type)
         etFiscalPower = view.findViewById(R.id.et_fiscal_power)
         lytFiscalPower = view.findViewById(R.id.lyt_fiscal_power)
         etNumSerie = view.findViewById(R.id.et_num_serie)

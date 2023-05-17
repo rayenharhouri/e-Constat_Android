@@ -2,6 +2,7 @@ package com.example.econstat_android.ViewModel
 
 import android.app.Activity
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -79,8 +80,9 @@ class carB_DamageActivity : AppCompatActivity() {
             BR = !BR
         }
         confirm.setOnClickListener {
-            val intent = Intent(this@carB_DamageActivity,MainActivity::class.java)
+            val intent = Intent(this@carB_DamageActivity,Drawer::class.java)
             startActivity(intent)
+
         }
         closeButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
