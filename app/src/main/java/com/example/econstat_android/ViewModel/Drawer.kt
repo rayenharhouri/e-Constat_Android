@@ -1,21 +1,18 @@
 package com.example.econstat_android.ViewModel
 
 import android.Manifest
-import android.content.ClipData
-import android.content.ClipDescription
-import android.content.ContentValues
-import android.content.Intent
+import android.app.Activity
+import android.content.*
 import android.content.pm.ActivityInfo
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.Canvas
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.view.DragEvent
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -23,6 +20,10 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import com.example.econstat_android.R
 import android.widget.*
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
+import com.example.econstat_android.MainActivity
+import com.example.econstat_android.ViewModel.QrCode.QrCodeScanner
 import com.example.econstat_android.fragments.homeFragment
 
 class Drawer : AppCompatActivity() {
@@ -68,9 +69,12 @@ class Drawer : AppCompatActivity() {
     private lateinit var ll15: GridLayout
 
 
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_drawer)
+        supportActionBar?.hide()
+        setFullScreen(this@Drawer)
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
 
@@ -173,8 +177,7 @@ class Drawer : AppCompatActivity() {
 
         Capture.setOnClickListener {
             takeScreenshot(50, 380, 1920, 800)
-           /* var intent = Intent(this, "win besh thez"::class.java)
-            startActivity(intent)*/
+            showDialog(this,"Report is Successfully filled","Success ✅")
         }
         carb1.setOnLongClickListener {
             val clipText = ""
@@ -439,6 +442,29 @@ class Drawer : AppCompatActivity() {
         } else {
             Toast.makeText(this, "Unable to save Sketch", Toast.LENGTH_SHORT).show()
         }
+    }
+    fun setFullScreen(activity: Activity) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            activity.window.insetsController?.apply {
+                hide(WindowInsets.Type.statusBars())
+                systemBarsBehavior = WindowInsetsController.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+            }
+        } else {
+            activity.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        }
+    }
+    fun showDialog(activityName: Context, message:String, title: String){
+        val builder = AlertDialog.Builder(activityName)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("OK", null)
+        builder.setOnDismissListener{
+            val intent = Intent(this@Drawer, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        val dialog = builder.create()
+        dialog.show()
     }
 }
 

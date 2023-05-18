@@ -65,15 +65,7 @@ class NewCarFragment : Fragment() {
         doneBtn = view.findViewById(R.id.done_btn)
 
         val brands = arrayOf(
-            "Alfa Romeo",
-            "Audi",
-            "Bentley",
-            "BMW",
-            "Brabus",
-            "Chery",
-            "Chevrolet",
-            "Chrysler",
-            "Citroen"
+            "Alfa Romeo","Audi","Bentley","BMW","Brabus","Chery","Chevrolet","Chrysler","Citroen","Corvette","Dacia","Fiat","Ford","Geely","Genesis","GMC","Haval","Honda","Hummer","Hyundai","Infiniti","Isuzu","Iveco","Jaguar","Jeep","Kia","Lamborghini","Land Rover","Lexus","Mahindra","MAN","Maserati","Maybach","Mazda","Mercedes Benz","MG","Mini","Mitsubishi","Nissan","Opel","Peugeot","Porsche","Renault","SEAT","Skoda","SsangYong","Suzuki","Triumph","Volkswagen"
         )
         val types = arrayOf("essence", "diesel")
         val adapterBrands =
@@ -202,7 +194,7 @@ class NewCarFragment : Fragment() {
 
     fun showDialog(activityName:Context,message:String){
         val builder = AlertDialog.Builder(activityName)
-        builder.setTitle("Caution ⚠️")
+        builder.setTitle("Success ✅")
         builder.setMessage(message)
         builder.setPositiveButton("OK", null)
         builder.setOnDismissListener{

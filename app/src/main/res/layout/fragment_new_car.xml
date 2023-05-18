@@ -229,81 +229,105 @@
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tun_label"
+        app:layout_constraintBottom_toTopOf="@+id/linear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lyt_num_serie" />
 
-    <TextView
-        android:id="@+id/tun_label"
-        android:layout_width="89dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="25dp"
-        android:background="@color/black"
-        android:text="@string/tun"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        android:textStyle="bold"
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="418dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/done_btn"
-        app:layout_constraintEnd_toStartOf="@+id/lyt_numImmatriculation2"
-        app:layout_constraintStart_toEndOf="@+id/lyt_numImmatriculation1"
-        app:layout_constraintTop_toBottomOf="@+id/numImmatriculation_label" />
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lyt_numImmatriculation1"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="151dp"
-        android:layout_height="86dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginBottom="110dp"
-        app:boxStrokeErrorColor="@color/red"
-        app:errorIconTint="@color/red"
-        app:errorTextColor="@color/red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tun_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numImmatriculation_label">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_numImmatriculation1"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:textSize="16sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lyt_numImmatriculation2"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="142dp"
-        android:layout_height="82dp"
-        android:layout_gravity="center"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="110dp"
-        app:boxStrokeErrorColor="@color/red"
-        app:errorIconTint="@color/red"
-        app:errorTextColor="@color/red"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tun_label"
-        app:layout_constraintTop_toBottomOf="@+id/numImmatriculation_label">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view7">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_numImmatriculation2"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:inputType="number"
-            android:textSize="16sp" />
-    </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lyt_numImmatriculation1"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="151dp"
+            android:layout_height="92dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="115dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="110dp"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorIconTint="@color/red"
+            app:errorTextColor="@color/red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tun_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numImmatriculation_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_numImmatriculation1"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/black"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tun_label"
+            android:layout_width="89dp"
+            android:layout_height="61dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="25dp"
+            android:background="@color/black"
+            android:gravity="center"
+            android:text="@string/tun"
+            android:textColor="@color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/done_btn"
+            app:layout_constraintEnd_toStartOf="@+id/lyt_numImmatriculation2"
+            app:layout_constraintStart_toEndOf="@+id/lyt_numImmatriculation1"
+            app:layout_constraintTop_toBottomOf="@+id/numImmatriculation_label" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lyt_numImmatriculation2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="142dp"
+            android:layout_height="82dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="110dp"
+            android:layout_marginEnd="27dp"
+            android:layout_marginBottom="110dp"
+            app:boxStrokeErrorColor="@color/red"
+            app:errorIconTint="@color/red"
+            app:errorTextColor="@color/red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tun_label"
+            app:layout_constraintTop_toBottomOf="@+id/numImmatriculation_label">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_numImmatriculation2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@color/black"
+                android:gravity="center"
+                android:inputType="number"
+                android:textColorHint="@color/white"
+                android:textColor="@color/white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
 
     <ImageButton
         android:id="@+id/done_btn"
@@ -319,6 +343,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tun_label" />
+        app:layout_constraintTop_toBottomOf="@+id/linear" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
