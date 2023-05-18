@@ -9,9 +9,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/e_constat_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/e_constat_logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.EConstat_Android"
         android:usesCleartextTraffic="true"
@@ -24,6 +24,7 @@
         <activity android:name=".ViewModel.LoginActivity" />
         <activity android:name=".ViewModel.ForgetPwdActivity" />
         <activity android:name=".ViewModel.changePwdActivity" />
+        <activity android:name=".ViewModel.Drawer" />
         <activity
             android:name=".ViewModel.forgetPwdOtpActivity"
             android:windowSoftInputMode="adjustResize" />

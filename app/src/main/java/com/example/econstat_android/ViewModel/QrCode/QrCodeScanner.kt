@@ -1,9 +1,13 @@
 package com.example.econstat_android.ViewModel.QrCode
 
+import android.app.ProgressDialog
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.econstat_android.Model.Car
 import com.example.econstat_android.Model.Constat
 import com.example.econstat_android.Model.Insurance
@@ -11,6 +15,7 @@ import com.example.econstat_android.Model.User
 import com.example.econstat_android.R
 import com.example.econstat_android.Services.ApiService
 import com.example.econstat_android.Services.ConstatService
+import com.example.econstat_android.ViewModel.Drawer
 import com.example.econstat_android.databinding.ActivityQrCodeBinding
 import com.google.gson.Gson
 import com.google.zxing.integration.android.IntentIntegrator
@@ -87,7 +92,15 @@ class QrCodeScanner : AppCompatActivity() {
 						var insurance = Gson().fromJson(insuranceJson, Insurance::class.java)
 						constatB(insurance._id,user._id,car._id,reportId)
 						sendReport(user.email)
-
+						val dialog = ProgressDialog.show(
+							this@QrCodeScanner, "",
+							"Sending Report", true
+						)
+						Handler().postDelayed({
+							dialog.dismiss()
+							val intent = Intent(this@QrCodeScanner , Drawer::class.java)
+							startActivity(intent)
+						}, 2000)
 					} else if (response.code() == 409) {
 						println(response.code())
 					}
@@ -154,4 +167,12 @@ class QrCodeScanner : AppCompatActivity() {
 		)
 	}
 
+	fun showDialog(activityName: Context, message:String, title: String){
+		val builder = AlertDialog.Builder(activityName)
+		builder.setTitle(title)
+		builder.setMessage(message)
+		builder.setPositiveButton("OK", null)
+		val dialog = builder.create()
+		dialog.show()
+	}
 }

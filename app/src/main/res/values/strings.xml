@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">eConstat_Android</string>
+    <string name="app_name">eConstat</string>
     <string name="email">Exp: email@example.com</string>
     <string name="lastName">Last Name</string>
     <string name="address">address</string>
@@ -119,10 +119,5 @@
     </string-array>
 
 
-    <string-array name="insurances">
-        <item> star</item>
-        <item> amen</item>
-        <item> LMA</item>
-        <item> BST</item>
-    </string-array>
+
 </resources>
