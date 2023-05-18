@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.TermsAndConditionFragment">
+
+    <LinearLayout
+        android:id="@+id/backView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp"    >
+        <ImageView android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:scaleType="centerInside"
+            android:layout_gravity="start"
+            android:layout_marginStart="5dp"
+            app:srcCompat="@drawable/terms_and_conditions"
+            tools:srcCompat="@drawable/terms_and_conditions">
+        </ImageView>
+          <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@string/TermsAndCondition"
+            android:layout_marginStart="20dp"
+            android:textSize="24dp"
+            android:textColor="@color/button"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            >
+            </TextView>
+              <TextView
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/updatedDate"
+                  android:layout_marginStart="20dp"
+                  android:textSize="16dp"
+                  android:textColor="@color/grey"
+                  >
+              </TextView>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp  "
+            android:text="@string/TC_1"
+            android:layout_marginStart="20dp"
+            android:textSize="16dp"
+            android:textColor="@color/button"
+
+            >
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/TC_2"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+
+            android:textSize="12dp"
+            android:textColor="@color/grey"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/TC_3"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:textColor="@color/grey"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/TC_4"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:textSize="12dp"
+            android:textColor="@color/grey"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/TC_5"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+
+            android:textSize="12dp"
+            android:textColor="@color/grey"
+            >
+        </TextView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/TC_6"
+            android:layout_marginStart="20dp"
+            >
+        </TextView>
+    </LinearLayout>
+
+</FrameLayout>

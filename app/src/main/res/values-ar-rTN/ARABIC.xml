@@ -1,0 +1,107 @@
+<resources>
+    <string name="app_name">eConstat_Android</string>
+    <string name="email">البريد الإلكتروني: example@domain.com</string>
+    <string name="lastName">اللقب</string>
+    <string name="address">العنوان</string>
+    <string name="firstName">الاسم الأول</string>
+    <string name="password">كلمة المرور</string>
+    <string name="confirmPassword">تأكيد كلمة المرور</string>
+    <string name="rememberMe">تذكرني</string>
+    <string name="newAroundHere">جديد هنا؟</string>
+    <string name="signup">تسجيل</string>
+    <string name="forgotpwd">هل نسيت كلمة المرور؟</string>
+    <string name="must_not_be_empty">يجب ألا يكون فارغًا!</string>
+    <string name="check_email">تحقق من بريدك الإلكتروني!</string>
+    <string name="driverLicense">رخصة القيادة</string>
+    <string name="signuptxt">مرحبًا بك في صفحة التسجيل الخاصة بنا! يرجى ملء النموذج أدناه لإنشاء حسابك 📝.</string>
+    <string name="forgetPwd_message">لإعادة تفعيل حسابك، يرجى إدخال عنوان البريد الإلكتروني الخاص بحسابك أدناه.</string>
+    <string name="next">التالي</string>
+    <string name="otp">التحقق من الرمز</string>
+    <string name="confirm">تأكيد</string>
+    <string name="changePwd">تغيير كلمة المرور</string>
+    <string name="updatePwd">تحديث كلمة المرور</string>
+    <string name="oldPwd">كلمة المرور القديمة</string>
+    <string name="newPwd">كلمة المرور الجديدة</string>
+    <string name="newPwdC">تأكيد كلمة المرور الجديدة</string>
+    <string name="UnlockFields">انقر على الرمز للتحرير</string>
+    <string name="home">الرئيسية</string>
+    <string name="car">سياراتي</string>
+    <string name="profile">ملفي الشخصي</string>
+    <string name="report">تقرير حادث جديد</string>
+    <string name="insuranceForm">يرجى ملء المعلومات المفقودة ⚠️</string>
+    <string name="insuranceName">اسم الشركة التأمينية</string>
+    <string name="ContractNum">رقم العقد</string>
+    <string name="agency">الوكالة</string>
+    <string name="validityTo">صالح حتى</string>
+    <string name="validityFrom">صالح من</string>
+    <string name="logOut">تسجيل الخروج</string>
+    <string name="languages">اللغات</string>
+    <string name="general">إعدادات عامة</string>
+    <string name="TermsAndCondition">الشروط والأحكام</string>
+    <string name="TC_1">مرحبًا بك في تطبيق eConstat TN، وهو تطبيق يساعدك على ملء التقارير بسهولة وسرعة. لاستخدام التطبيق، ستحتاج إلى إنشاء حساب. بإنشاء حساب واستخدام التطبيق، فإنك توافق على الالتزام بشروط وأحكام هذا الاتفاق.</string>
+    <string name="TC_2"><b>جمع البيانات</b>يجمع eConstat TN بيانات شخصية منك لتوفير أفضل تجربة ممكنة. يتضمن ذلك معلومات مثل اسمك، عنوان بريدك الإلكتروني، عنوانك، معلومات حول سيارتك، ومعلومات حول تأمين سيارتك لتسهيل العملية، بالإضافة إلى أي معلومات أخرى تختار تقديمها. لا يعرض eConstat TN أي إعلانات لك.</string>
+    <string name="TC_3"><b>الوصول إلى الجهاز</b>يحتاج eConstat TN إلى الوصول إلى كاميرا جهازك للعمل بشكل صحيح. باستخدام التطبيق، فإنك تمنح eConstat TN إذنًا للوصول إلى كاميرا جهازك.</string>
+    <string name="TC_4"><b>التكامل مع الجهات الخارجية</b>يستخدم eConstat TN خادمًا Node.js لتخزين ومعالجة البيانات. باستخدام التطبيق، فإنك توافق على جمع واستخدام ومشاركة بياناتك وفقًا للشروط والأحكام المذكورة هنا.</string>
+    <string name="TC_5"><b>تغيير الشروط والأحكام</b>تحتفظ eConstat TN بالحق في تحديث هذه الشروط والأحكام في أي وقت. إذا قمنا بأي تغييرات، فسننشر الشروط والأحكام المعدلة على هذه الصفحة وسنشير إلى التاريخ الفعلي للشروط والأحكام المعدلة. نشجعك على مراجعة هذه الشروط والأحكام بشكل دوري للبقاء على اطلاع على ممارساتنا.</string>
+    <string name="TC_6"><b>اتصل بنا</b>إذا كان لديك أي أسئلة حول هذه الشروط والأحكام، فيرجى الاتصال بنا على العنوان التالي: rayen.harhouri@esprit.tn</string>
+    <string name="updatedDate">تحديث 19/4/2023</string>
+    <string name="version">الإصدار</string>
+    <string name="versionNum">1.0.1</string>
+    <string name="darkMode">الوضع الليلي</string>
+    <string name="Step1Detail">In this step, you can report the location of any damage to your car. To do so, simply click on the corresponding icon to change its status. Please refer to the icon descriptions below for more details.</string>
+    <string name="Step1">7aja loula</string>
+    <string name="damageDesc">This icon represents the location of any damage to your car. If the icon is displayed, it indicates that your car has been damaged in that particular location. For example, if the icon is located at the top left of the screen, it means that your car has been damaged in the top left area.</string>
+    <string name="shieldDesc">If the shield icon is displayed, it indicates that your car does not have any damage in that particular location. For example, if the shield icon is located at the top left of the screen, it means that your car does not have any damage in the top left area.</string>
+    <string name="signIn">Sign Ip</string>
+    <string name="Step2">STEP TWO</string>
+    <string name="Step2Detail">In this step, you can report the location of any damage to your carB. To do so, simply click on the corresponding icon to change its status. Please refer to the icon descriptions below for more details.</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">مرحبًا بك في الشاشة الفارغة</string>
+    <string name="settings">الإعدادات</string>
+    <string name="Arabic">العربية</string>
+    <string name="French">الفرنسية</string>
+    <string name="Eng">الإنجليزية</string>
+    <string name="cars">Your Cars</string>
+    <string name="details">Car Details</string>
+
+    <string name="manage_your_cars_insurance">Manage Your Car insurance</string>
+    <string name="choose_your_car_brand">Choose Your Car Brand</string>
+    <string name="choose_your_car_insurance">Choose Your Car insurance</string>
+    <string name="choose_your_car_type">Choose Your Car Type</string>
+    <string name="from">From</string>
+    <string name="to">To</string>
+
+    <string name="validity">Validity of Your Car Insurance</string>
+
+    <string name="brand">Brand</string>
+    <string name="type">Type</string>
+
+    <string name="Star">star</string>
+    <string name="Ami">ami</string>
+    <string name="Hayet">hayet</string>
+    <string name="comar">comar</string>
+    <string name="num_serie">numero Serie</string>
+    <string name="fiscal_power">fiscal Power</string>
+    <string name="num_contrat">Num Contrat</string>
+    <string name="num_immatriculation">Matricule</string>
+    <string name="add_new_car">Add New Car</string>
+
+
+    <string name="tun">TUN</string>
+
+
+    <string name="Assistance">Assistance</string>
+
+
+    <string name="helper_activity">HelperActivity</string>
+    <string name="showing_code_in_fragment">Showing Code in Fragment</string>
+    <string name="scan_qr_code">SCAN QR CODE</string>
+    <string name="name">Name</string>
+    <string name="empty">---</string>
+    <string name="site_name">Site Name</string>
+    <string name="scan_a_code">Scan a QR Code</string>
+    <string name="result_not_found">Result Not Found</string>
+    <string name="show_scanner_from_fragment">Show Scanner From Fragment</string>
+</resources>
